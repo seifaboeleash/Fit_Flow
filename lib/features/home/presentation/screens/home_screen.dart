@@ -96,22 +96,6 @@ class HomeScreen extends StatelessWidget {
             },
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: AppColors.primaryColor,
-          unselectedItemColor: AppColors.grey,
-          showUnselectedLabels: true,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu_book),
-              label: 'Learn',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              label: 'Profile',
-            ),
-          ],
-        ),
       ),
     );
   }

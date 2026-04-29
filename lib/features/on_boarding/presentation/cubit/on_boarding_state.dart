@@ -10,3 +10,12 @@ final class OnBoardingUpdated extends OnBoardingState {
 
   const OnBoardingUpdated({this.selectedGoal, this.selectedDays = 3});
 }
+
+final class OnBoardingLoading extends OnBoardingState {}
+
+final class OnBoardingSuccess extends OnBoardingState {}
+
+final class OnBoardingError extends OnBoardingState {
+  final String message;
+  const OnBoardingError(this.message);
+}

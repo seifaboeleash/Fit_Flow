@@ -1,11 +1,11 @@
 import '../../domain/entities/active_plan.dart';
 import '../../domain/entities/dashboard_stats.dart';
-import '../../domain/entities/exercise.dart';
+import '../../../workout/domain/entities/workout_plan.dart';
 import '../../domain/entities/week_day.dart';
 
 class DashboardData {
   final ActivePlan activePlan;
-  final List<Exercise> todayExercises;
+  final List<DayExercise> todayExercises;
   final DashboardStats stats;
   final List<WeekDay> weekDays;
 

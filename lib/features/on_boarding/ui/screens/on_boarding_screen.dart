@@ -31,10 +31,26 @@ class OnBoardingScreen extends StatelessWidget {
                 SizedBox(height: 32.h),
                 Expanded(
                   child: SingleChildScrollView(
-                    child: BlocBuilder<OnBoardingCubit, OnBoardingState>(
+                    child: BlocConsumer<OnBoardingCubit, OnBoardingState>(
+                      listener: (context, state) {
+                        if (state is OnBoardingSuccess) {
+                          Navigator.pushReplacementNamed(context, mainLayoutScreen);
+                        } else if (state is OnBoardingError) {
+                          showCustomSnackBar(context, state.message);
+                        }
+                      },
                       builder: (context, state) {
-                        if (state is! OnBoardingUpdated)
+                        if (state is OnBoardingLoading) {
+                          return Center(
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 100.h),
+                              child: CircularProgressIndicator(color: AppColors.primaryColor),
+                            ),
+                          );
+                        }
+                        if (state is! OnBoardingUpdated) {
                           return const SizedBox.shrink();
+                        }
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -86,13 +102,8 @@ class OnBoardingScreen extends StatelessWidget {
                                 color: AppColors.white,
                               ),
                               onTap: () {
-                                if (context
-                                    .read<OnBoardingCubit>()
-                                    .canContinue()) {
-                                  Navigator.pushReplacementNamed(
-                                    context,
-                                    homeScreen,
-                                  );
+                                if (context.read<OnBoardingCubit>().canContinue()) {
+                                  context.read<OnBoardingCubit>().completeOnboarding();
                                 } else {
                                   showCustomSnackBar(
                                     context,
@@ -117,41 +128,6 @@ class OnBoardingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // SizedBox(height: 16.h),
-                //             CustomButton(
-                //               text: 'Continue',
-                //               color: AppColors.primaryColor,
-                //               textColor: AppColors.white,
-                //               sufix: Icon(
-                //                 Icons.arrow_forward,
-                //                 color: AppColors.white,
-                //               ),
-                //               onTap: () {
-                //                 if (context
-                //                     .read<OnBoardingCubit>()
-                //                     .canContinue()) {
-                //                   Navigator.pushReplacementNamed(
-                //                     context,
-                //                     homeScreen,
-                //                   );
-                //                 } else {
-                //                   showCustomSnackBar(
-                //                     context,
-                //                     'Please select your goal and availability',
-                //                   );
-                //                 }
-                //               },
-                //               radius: 1000.r,
-                //             ),
-                //             SizedBox(height: 16.h),
-                //             Text(
-                //               'YOU CAN CHANGE THIS LATER IN PROFILE',
-                //               style: Styles.textStyle10.copyWith(
-                //                 color: AppColors.grey,
-                //                 letterSpacing: 1.1,
-                //               ),
-                //             ),
-                //             SizedBox(height: 16.h),
               ],
             ),
           ),

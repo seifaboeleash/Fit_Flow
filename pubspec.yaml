@@ -30,7 +30,6 @@ environment:
 dependencies:
   cloud_firestore: ^6.3.0
   cupertino_icons: ^1.0.8
-  firebase_auth: ^6.4.0
   firebase_core: ^4.7.0
   flutter:
     sdk: flutter
@@ -39,6 +38,8 @@ dependencies:
   flutter_svg: ^2.2.3
   gap: ^3.0.1
   get_it: ^9.2.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   mocktail: ^1.0.4
 
 dev_dependencies:
