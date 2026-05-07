@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (Production)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_prod.dart",
+            "args": [
+                "--flavor",
+                "production"
+            ]
+        },
+        {
+            "name": "Flutter (Dev)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "development"
+            ]
+        }
+    ]
+}

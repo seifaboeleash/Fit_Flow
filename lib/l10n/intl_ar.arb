@@ -1,0 +1,31 @@
+{
+  "@@locale": "ar",
+  "appTitle": "فيت فلو",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "continueButton": "متابعة",
+  "onboardingSubtitle": "يرجى تحديد هدفك وتوفرك",
+  "goalBuildMuscle": "بناء العضلات",
+  "goalBuildMuscleDesc": "التركيز على تضخيم العضلات والقوة.",
+  "goalGetStrong": "زيادة القوة",
+  "goalGetStrongDesc": "إعطاء الأولوية لرفع الأثقال.",
+  "goalGeneralFitness": "اللياقة العامة",
+  "goalGeneralFitnessDesc": "صحة متوازنة وحركة.",
+  "navHome": "الرئيسية",
+  "navLearn": "التعلم",
+  "navProfile": "الملف الشخصي",
+  "homeWeeklyBlueprint": "مخطط الأسبوع",
+  "homeTodaysExercises": "تمارين اليوم",
+  "homeLetsGetToWork": "لنبدأ العمل.",
+  "homeRecovery": "الاستشفاء",
+  "homeRecoveryDesc": "الحالة المثلى للتدريب اليوم.",
+  "homeWeeklyBurn": "الحرق الأسبوعي",
+  "homeWeeklyBurnDesc": "السعرات الحرارية المحروقة هذا الأسبوع.",
+  "homeWeek1": "الأسبوع الأول",
+  "exerciseInstructions": "التعليمات",
+  "onboardingTitle": "اختر هدفك",
+  "onboardingDesc": "قم بتخصيص رحلتك لأداء دقيق.",
+  "weeklyAvailability": "التوفر الأسبوعي",
+  "changeLaterProfile": "يمكنك تغيير هذا لاحقًا في الملف الشخصي"
+}

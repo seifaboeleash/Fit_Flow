@@ -9,6 +9,7 @@ import '../widgets/active_plan_card.dart';
 import '../widgets/dashboard_stat_card.dart';
 import '../widgets/exercise_list_tile.dart';
 import '../widgets/weekly_date_strip.dart';
+import 'package:fit_flow/generated/l10n.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,14 +39,14 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _buildHeader(),
+                      _buildHeader(context),
                       SizedBox(height: 32.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Weekly Blueprint', style: Styles.textStyle18),
+                          Text(S.of(context).homeWeeklyBlueprint, style: Styles.textStyle18),
                           Text(
-                            'Week 1',
+                            S.of(context).homeWeek1,
                             style: Styles.textStyle14.copyWith(
                               color: AppColors.primaryColor,
                               fontWeight: FontWeight.w700,
@@ -58,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(height: 24.h),
                       ActivePlanCard(plan: data.activePlan),
                       SizedBox(height: 32.h),
-                      Text("Today's Exercises", style: Styles.textStyle18),
+                      Text(S.of(context).homeTodaysExercises, style: Styles.textStyle18),
                       SizedBox(height: 16.h),
                       ...data.todayExercises.map(
                         (e) => ExerciseListTile(exercise: e),
@@ -68,8 +69,8 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: DashboardStatCard(
-                              title: 'Recovery',
-                              subtitle: 'Optimal status for training today.',
+                              title: S.of(context).homeRecovery,
+                              subtitle: S.of(context).homeRecoveryDesc,
                               value: '${data.stats.recoveryPercentage}%',
                               icon: Icons.battery_charging_full,
                               tintColor: AppColors.green,
@@ -78,8 +79,8 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(width: 16.w),
                           Expanded(
                             child: DashboardStatCard(
-                              title: 'Weekly Burn',
-                              subtitle: 'Active kcal burned this week.',
+                              title: S.of(context).homeWeeklyBurn,
+                              subtitle: S.of(context).homeWeeklyBurnDesc,
                               value: '${data.stats.weeklyBurn}',
                               icon: Icons.local_fire_department,
                               tintColor: AppColors.orange,
@@ -100,7 +101,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -112,7 +113,7 @@ class HomeScreen extends StatelessWidget {
               style: Styles.textStyle20.copyWith(color: AppColors.primaryColor),
             ),
             SizedBox(height: 4.h),
-            Text("Let's get to work.", style: Styles.textStyle12),
+            Text(S.of(context).homeLetsGetToWork, style: Styles.textStyle12),
           ],
         ),
         Icon(Icons.settings_outlined, color: AppColors.textDark),

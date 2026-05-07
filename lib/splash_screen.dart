@@ -1,7 +1,5 @@
 import 'package:fit_flow/core/constants/strings.dart';
 import 'package:fit_flow/core/theme/app_colors.dart';
-import 'package:fit_flow/core/utils/di.dart';
-import 'package:fit_flow/features/on_boarding/domain/repositories/on_boarding_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,15 +15,16 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () async {
-      if (mounted) {
-        final onBoardingRepo = getIt<OnBoardingRepository>();
-        final hasCompleted = await onBoardingRepo.hasCompletedOnboarding();
-        if (hasCompleted) {
-          Navigator.pushReplacementNamed(context, mainLayoutScreen);
-        } else {
-          Navigator.pushReplacementNamed(context, onBoardingScreen);
-        }
-      }
+      // if (mounted) {
+      //   final onBoardingRepo = getIt<OnBoardingRepository>();
+      //   final hasCompleted = await onBoardingRepo.hasCompletedOnboarding();
+      //   if (hasCompleted) {
+      //     Navigator.pushReplacementNamed(context, mainLayoutScreen);
+      //   } else {
+      //     Navigator.pushReplacementNamed(context, onBoardingScreen);
+      //   }
+      // }
+      Navigator.pushReplacementNamed(context, onBoardingScreen);
     });
   }
 

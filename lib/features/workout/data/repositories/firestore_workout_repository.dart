@@ -47,7 +47,8 @@ class FirestoreWorkoutRepository implements WorkoutRepository {
           final exerciseId = exData['exerciseId'] as String;
 
           // 4. For each exercise: exercises/{exerciseId} -> exercise details
-          final exerciseDetailsDoc = await _firestore.collection('exercises').doc(exerciseId).get();
+          final exerciseDetailsDoc =
+           await _firestore.collection('exercises').doc(exerciseId).get();
           Exercise? exerciseDetails;
 
           if (exerciseDetailsDoc.exists) {

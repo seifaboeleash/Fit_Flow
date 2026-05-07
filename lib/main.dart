@@ -1,19 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fit_flow/config/app_config.dart';
 import 'package:fit_flow/core/constants/strings.dart';
 import 'package:fit_flow/core/routing/app_router.dart';
-import 'package:fit_flow/core/seeder/firestore_seeder.dart';
 import 'package:fit_flow/core/utils/di.dart';
 import 'package:fit_flow/firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-void main() async {
+Future<void> runMain(EnvType envType) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Hive.initFlutter();
-  await setupGetIt();
-  await FirestoreSeeder().seed();
+  await setupGetIt(envType);
+  // await FirestoreSeeder().seed();
   runApp(const MyApp());
 }
 
@@ -29,6 +31,14 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        locale: Locale('en'),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         theme: ThemeData(fontFamily: 'PlusJakartaSans'),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoutes,

@@ -1,0 +1,31 @@
+{
+  "@@locale": "en",
+  "appTitle": "FitFlow",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "continueButton": "Continue",
+  "onboardingSubtitle": "Please select your goal and availability",
+  "goalBuildMuscle": "Build Muscle",
+  "goalBuildMuscleDesc": "Focus on hypertrophy and strength.",
+  "goalGetStrong": "Get Strong",
+  "goalGetStrongDesc": "Prioritize heavy lifting and power.",
+  "goalGeneralFitness": "General Fitness",
+  "goalGeneralFitnessDesc": "Balanced health and mobility.",
+  "navHome": "Home",
+  "navLearn": "Learn",
+  "navProfile": "Profile",
+  "homeWeeklyBlueprint": "Weekly Blueprint",
+  "homeTodaysExercises": "Today's Exercises",
+  "homeLetsGetToWork": "Let's get to work.",
+  "homeRecovery": "Recovery",
+  "homeRecoveryDesc": "Optimal status for training today.",
+  "homeWeeklyBurn": "Weekly Burn",
+  "homeWeeklyBurnDesc": "Active kcal burned this week.",
+  "homeWeek1": "Week 1",
+  "exerciseInstructions": "Instructions",
+  "onboardingTitle": "Select Your Goal",
+  "onboardingDesc": "Customize your journey for precision performance.",
+  "weeklyAvailability": "Weekly Availability",
+  "changeLaterProfile": "YOU CAN CHANGE THIS LATER IN PROFILE"
+}

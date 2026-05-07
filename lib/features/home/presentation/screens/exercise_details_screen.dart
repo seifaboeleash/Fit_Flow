@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../workout/domain/entities/workout_plan.dart';
+import 'package:fit_flow/generated/l10n.dart';
 
 class ExerciseDetailsScreen extends StatelessWidget {
   final Exercise exercise;
@@ -73,7 +74,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 32.h),
                   Text(
-                    'Instructions',
+                    S.of(context).exerciseInstructions,
                     style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 16.h),

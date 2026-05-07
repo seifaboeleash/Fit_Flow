@@ -9,6 +9,7 @@ import 'package:fit_flow/features/on_boarding/presentation/cubit/on_boarding_cub
 import 'package:fit_flow/features/on_boarding/ui/widgets/availability_selector.dart';
 import 'package:fit_flow/features/on_boarding/ui/widgets/goal_selection_card.dart';
 import 'package:fit_flow/features/on_boarding/ui/widgets/on_boarding_header.dart';
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +35,10 @@ class OnBoardingScreen extends StatelessWidget {
                     child: BlocConsumer<OnBoardingCubit, OnBoardingState>(
                       listener: (context, state) {
                         if (state is OnBoardingSuccess) {
-                          Navigator.pushReplacementNamed(context, mainLayoutScreen);
+                          Navigator.pushReplacementNamed(
+                            context,
+                            mainLayoutScreen,
+                          );
                         } else if (state is OnBoardingError) {
                           showCustomSnackBar(context, state.message);
                         }
@@ -44,7 +48,9 @@ class OnBoardingScreen extends StatelessWidget {
                           return Center(
                             child: Padding(
                               padding: EdgeInsets.only(top: 100.h),
-                              child: CircularProgressIndicator(color: AppColors.primaryColor),
+                              child: CircularProgressIndicator(
+                                color: AppColors.primaryColor,
+                              ),
                             ),
                           );
                         }
@@ -55,7 +61,7 @@ class OnBoardingScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Select Your Goal',
+                              S.of(context).onboardingTitle,
                               style: TextStyle(
                                 fontSize: 34.sp,
                                 fontWeight: FontWeight.w800,
@@ -64,7 +70,7 @@ class OnBoardingScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 8.h),
                             Text(
-                              'Customize your journey for precision performance.',
+                              S.of(context).onboardingDesc,
                               style: Styles.textStyle14,
                             ),
                             SizedBox(height: 24.h),
@@ -81,7 +87,7 @@ class OnBoardingScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 24.h),
                             Text(
-                              'Weekly Availability',
+                              S.of(context).weeklyAvailability,
                               style: Styles.textStyle18,
                             ),
                             SizedBox(height: 16.h),
@@ -94,7 +100,7 @@ class OnBoardingScreen extends StatelessWidget {
                             SizedBox(height: 24.h),
                             SizedBox(height: 16.h),
                             CustomButton(
-                              text: 'Continue',
+                              text: S.of(context).continueButton,
                               color: AppColors.primaryColor,
                               textColor: AppColors.white,
                               sufix: Icon(
@@ -102,23 +108,29 @@ class OnBoardingScreen extends StatelessWidget {
                                 color: AppColors.white,
                               ),
                               onTap: () {
-                                if (context.read<OnBoardingCubit>().canContinue()) {
-                                  context.read<OnBoardingCubit>().completeOnboarding();
+                                if (context
+                                    .read<OnBoardingCubit>()
+                                    .canContinue()) {
+                                  context
+                                      .read<OnBoardingCubit>()
+                                      .completeOnboarding();
                                 } else {
                                   showCustomSnackBar(
                                     context,
-                                    'Please select your goal and availability',
+                                    S.of(context).onboardingSubtitle,
                                   );
                                 }
                               },
                               radius: 1000.r,
                             ),
                             SizedBox(height: 16.h),
-                            Text(
-                              'YOU CAN CHANGE THIS LATER IN PROFILE',
-                              style: Styles.textStyle10.copyWith(
-                                color: AppColors.grey,
-                                letterSpacing: 1.1,
+                            Center(
+                              child: Text(
+                                S.of(context).changeLaterProfile,
+                                style: Styles.textStyle10.copyWith(
+                                  color: AppColors.grey,
+                                  letterSpacing: 1.1,
+                                ),
                               ),
                             ),
                             SizedBox(height: 16.h),
