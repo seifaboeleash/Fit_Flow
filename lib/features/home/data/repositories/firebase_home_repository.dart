@@ -29,7 +29,7 @@ class FirebaseHomeRepository implements HomeRepository {
   }) : _workoutRepository = workoutRepository,
        _prefsBox = prefsBox,
        _planCacheBox = planCacheBox;
-
+  
   @override
   Future<ApiResult<DashboardData>> getDashboardData() async {
     try {

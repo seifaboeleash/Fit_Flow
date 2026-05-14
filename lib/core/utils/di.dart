@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:fit_flow/core/localization/locale_cubit.dart';
 import 'package:hive/hive.dart';
 import 'package:fit_flow/config/app_config.dart';
 import 'package:fit_flow/features/home/data/repositories/firebase_home_repository.dart';
@@ -49,6 +50,7 @@ Future<void> setupGetIt(EnvType envType) async {
   );
 
   // Cubits
+  getIt.registerFactory<LocaleCubit>(() => LocaleCubit(getIt<Box>(instanceName: 'userPrefs')));
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepository>()));
   getIt.registerFactory<OnBoardingCubit>(() => OnBoardingCubit(getIt<OnBoardingRepository>()));  
 }

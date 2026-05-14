@@ -44,7 +44,8 @@ class HomeScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(S.of(context).homeWeeklyBlueprint, style: Styles.textStyle18),
+                          Text(S.of(context).homeWeeklyBlueprint,
+                              style: Styles.textStyle18),
                           Text(
                             S.of(context).homeWeek1,
                             style: Styles.textStyle14.copyWith(
@@ -59,7 +60,8 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(height: 24.h),
                       ActivePlanCard(plan: data.activePlan),
                       SizedBox(height: 32.h),
-                      Text(S.of(context).homeTodaysExercises, style: Styles.textStyle18),
+                      Text(S.of(context).homeTodaysExercises,
+                          style: Styles.textStyle18),
                       SizedBox(height: 16.h),
                       ...data.todayExercises.map(
                         (e) => ExerciseListTile(exercise: e),
