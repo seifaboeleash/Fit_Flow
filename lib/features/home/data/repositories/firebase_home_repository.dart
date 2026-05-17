@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:hive/hive.dart';
 import '../../../../core/utils/api_result.dart';
 import '../../../workout/domain/entities/workout_plan.dart';
 import '../../../workout/domain/repositories/workout_repository.dart';
@@ -19,55 +17,25 @@ class OnboardingIncompleteException implements Exception {
 
 class FirebaseHomeRepository implements HomeRepository {
   final WorkoutRepository _workoutRepository;
-  final Box _prefsBox;
-  final Box _planCacheBox;
+  final Map<String, dynamic> _prefsBox;
 
   FirebaseHomeRepository({
     required WorkoutRepository workoutRepository,
-    required Box prefsBox,
-    required Box planCacheBox,
+    required Map<String, dynamic> prefsBox,
   }) : _workoutRepository = workoutRepository,
-       _prefsBox = prefsBox,
-       _planCacheBox = planCacheBox;
+       _prefsBox = prefsBox;
   
   @override
   Future<ApiResult<DashboardData>> getDashboardData() async {
     try {
-      final String? planId = _prefsBox.get('activePlanId');
+      final String? planId = _prefsBox['activePlanId'];
       if (planId == null) {
         throw OnboardingIncompleteException();
       }
 
-      int currentDayIndex = _prefsBox.get('currentDay', defaultValue: 1) ?? 1;
+      int currentDayIndex = _prefsBox['currentDay'] ?? 1;
 
-      WorkoutPlan plan;
-
-      final String cacheKey = 'cached_plan_$planId';
-      final cachedJsonString = _planCacheBox.get(cacheKey);
-      final cacheTimestamp = _planCacheBox.get('cache_timestamp_$planId');
-
-      bool useCache = false;
-      if (cachedJsonString != null && cacheTimestamp != null) {
-        final now = DateTime.now().millisecondsSinceEpoch;
-        // Check if cache is less than 24 hours old
-        if (now - (cacheTimestamp as int) < 24 * 60 * 60 * 1000) {
-          useCache = true;
-        }
-      }
-
-      if (useCache) {
-        final Map<String, dynamic> jsonMap = jsonDecode(cachedJsonString);
-        plan = WorkoutPlan.fromJson(jsonMap);
-      } else {
-        plan = await _workoutRepository.getPlanById(planId);
-
-        // Cache the result
-        await _planCacheBox.put(cacheKey, jsonEncode(plan.toJson()));
-        await _planCacheBox.put(
-          'cache_timestamp_$planId',
-          DateTime.now().millisecondsSinceEpoch,
-        );
-      }
+      WorkoutPlan plan = await _workoutRepository.getPlanById(planId);
 
       // Map to DashboardData
       // Find today's workout

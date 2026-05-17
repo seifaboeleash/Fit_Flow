@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 
 class LocaleCubit extends Cubit<Locale> {
-  final Box _prefsBox;
+  final Map<String, dynamic> _prefsBox;
   static const _localeKey = 'app_locale';
 
   LocaleCubit(this._prefsBox) : super(const Locale('en')) {
@@ -11,12 +10,12 @@ class LocaleCubit extends Cubit<Locale> {
   }
 
   void _loadLocale() {
-    final langCode = _prefsBox.get(_localeKey, defaultValue: 'en') as String;
+    final langCode = _prefsBox[_localeKey] as String? ?? 'en';
     emit(Locale(langCode));
   }
 
   Future<void> changeLanguage(String languageCode) async {
-    await _prefsBox.put(_localeKey, languageCode);
+    _prefsBox[_localeKey] = languageCode;
     emit(Locale(languageCode));
   }
   

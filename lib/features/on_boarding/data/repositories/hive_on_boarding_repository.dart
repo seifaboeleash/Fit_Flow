@@ -1,10 +1,10 @@
-import 'package:hive/hive.dart';
 import '../../domain/repositories/on_boarding_repository.dart';
 
-class HiveOnBoardingRepository implements OnBoardingRepository {
-  final Box _prefsBox;
+class InMemoryOnBoardingRepository implements OnBoardingRepository {
+  final Map<String, dynamic> _prefsBox;
 
-  HiveOnBoardingRepository({required Box prefsBox}) : _prefsBox = prefsBox;
+  InMemoryOnBoardingRepository({required Map<String, dynamic> prefsBox})
+      : _prefsBox = prefsBox;
 
   @override
   Future<void> savePreferences({
@@ -12,12 +12,12 @@ class HiveOnBoardingRepository implements OnBoardingRepository {
     required int daysPerWeek,
   }) async {
     final String activePlanId = '${goal}_${daysPerWeek}days';
-    
-    await _prefsBox.put('goal', goal);
-    await _prefsBox.put('daysPerWeek', daysPerWeek);
-    await _prefsBox.put('activePlanId', activePlanId);
-    await _prefsBox.put('currentWeek', 1);
-    await _prefsBox.put('currentDay', 1);
+
+    _prefsBox['goal'] = goal;
+    _prefsBox['daysPerWeek'] = daysPerWeek;
+    _prefsBox['activePlanId'] = activePlanId;
+    _prefsBox['currentWeek'] = 1;
+    _prefsBox['currentDay'] = 1;
   }
 
   @override
@@ -30,9 +30,7 @@ class HiveOnBoardingRepository implements OnBoardingRepository {
     if (_prefsBox.isEmpty) {
       return null;
     }
-    
-    return {
-      for (var key in _prefsBox.keys) key.toString(): _prefsBox.get(key),
-    };
+
+    return Map.from(_prefsBox);
   }
 }
