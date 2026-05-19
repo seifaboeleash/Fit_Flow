@@ -1,10 +1,10 @@
 import 'package:fit_flow/core/constants/strings.dart';
+import 'package:fit_flow/features/workout/domain/entities/workout_plan.dart';
 import 'package:fit_flow/core/shared/custom_snack_bar.dart';
 import 'package:fit_flow/core/theme/app_colors.dart';
 import 'package:fit_flow/core/theme/styles.dart';
 import 'package:fit_flow/core/shared/custom_button.dart';
 import 'package:fit_flow/core/utils/di.dart';
-import 'package:fit_flow/features/on_boarding/domain/entities/workout_goal.dart';
 import 'package:fit_flow/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:fit_flow/features/on_boarding/ui/widgets/availability_selector.dart';
 import 'package:fit_flow/features/on_boarding/ui/widgets/goal_selection_card.dart';
@@ -17,10 +17,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
+  String _getSvgPathForGoal(String id) {
+    switch (id) {
+      case 'build_muscle':
+        return 'assets/svgs/build_muscle.svg';
+      case 'get_strong':
+        return 'assets/svgs/get_strong.svg';
+      case 'general_fitness':
+      default:
+        return 'assets/svgs/general_fitness.svg';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<OnBoardingCubit>(),
+      create: (context) => getIt<OnBoardingCubit>()..loadGoals(),
       child: Builder(
         builder: (context) => Scaffold(
           backgroundColor: AppColors.backgroundColor,
@@ -45,7 +57,7 @@ class OnBoardingScreen extends StatelessWidget {
                           }
                         },
                         builder: (context, state) {
-                          if (state is OnBoardingLoading) {
+                          if (state is OnBoardingLoadingGoals || state is OnBoardingLoading) {
                             return Center(
                               child: Padding(
                                 padding: EdgeInsets.only(top: 100.h),
@@ -75,12 +87,12 @@ class OnBoardingScreen extends StatelessWidget {
                                 style: Styles.textStyle14,
                               ),
                               SizedBox(height: 20.h),
-                              ...WorkoutGoal.values.map(
+                              ...state.goals.map(
                                 (goal) => GoalSelectionCard(
                                   title: goal.title,
                                   subtitle: goal.subtitle,
-                                  svgPath: goal.svgPath,
-                                  isSelected: state.selectedGoal == goal,
+                                  svgPath: _getSvgPathForGoal(goal.id),
+                                  isSelected: state.selectedGoal?.id == goal.id,
                                   onTap: () => context
                                       .read<OnBoardingCubit>()
                                       .selectGoal(goal),
@@ -170,32 +182,3 @@ class OnBoardingScreen extends StatelessWidget {
     );
   }
 }
-
-                        // //    Placeholder for Recommended static image
-                        //     Container(
-                        //       height: 120.h,
-                        //       decoration: BoxDecoration(
-                        //         color: AppColors.grey,
-                        //         borderRadius: BorderRadius.circular(16.r),
-                        //       ),
-                        //       alignment: Alignment.bottomLeft,
-                        //       padding: EdgeInsets.all(16.w),
-                        //       child: Row(
-                        //         mainAxisAlignment:
-                        //             MainAxisAlignment.spaceBetween,
-                        //         children: [
-                        //           Text(
-                        //             'RECOMMENDED',
-                        //             style: Styles.textStyle10.copyWith(
-                        //               color: AppColors.primaryColor,
-                        //             ),
-                        //           ),
-                        //           Text(
-                        //             'Optimal recovery cycle',
-                        //             style: Styles.textStyle12.copyWith(
-                        //               color: AppColors.white,
-                        //             ),
-                        //           ),
-                        //         ],
-                        //       ),
-                        //     ),

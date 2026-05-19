@@ -1,3 +1,5 @@
+import '../../../workout/domain/entities/workout_plan.dart';
+
 abstract class OnBoardingRepository {
   Future<void> savePreferences({
     required String goal,
@@ -7,4 +9,6 @@ abstract class OnBoardingRepository {
   Future<bool> hasCompletedOnboarding();
 
   Future<Map<String, dynamic>?> getPreferences();
+
+  Future<List<Goal>> getGoals();
 }

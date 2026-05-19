@@ -1,5 +1,5 @@
+import 'package:fit_flow/features/workout/domain/entities/workout_plan.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../domain/entities/workout_goal.dart';
 import '../../domain/repositories/on_boarding_repository.dart';
 
 part 'on_boarding_state.dart';
@@ -7,15 +7,25 @@ part 'on_boarding_state.dart';
 class OnBoardingCubit extends Cubit<OnBoardingState> {
   final OnBoardingRepository _repository;
 
-  OnBoardingCubit(this._repository) : super(const OnBoardingUpdated());
+  OnBoardingCubit(this._repository) : super(OnBoardingLoadingGoals());
 
-  void selectGoal(WorkoutGoal goal) {
+  Future<void> loadGoals() async {
+    try {
+      final goals = await _repository.getGoals();
+      emit(OnBoardingUpdated(goals: goals));
+    } catch (e) {
+      emit(OnBoardingError('Failed to load goals: $e'));
+    }
+  }
+
+  void selectGoal(Goal goal) {
     if (state is OnBoardingUpdated) {
       final currentState = state as OnBoardingUpdated;
       emit(
         OnBoardingUpdated(
           selectedGoal: goal,
           selectedDays: currentState.selectedDays,
+          goals: currentState.goals,
         ),
       );
     }
@@ -28,6 +38,7 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
         OnBoardingUpdated(
           selectedGoal: currentState.selectedGoal,
           selectedDays: days,
+          goals: currentState.goals,
         ),
       );
     }
@@ -51,17 +62,23 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
         return;
       }
       
-      final goalName = currentState.selectedGoal!.name;
+      final goalId = currentState.selectedGoal!.id;
       final days = currentState.selectedDays;
+      final currentGoals = currentState.goals;
 
       emit(OnBoardingLoading());
       try {
         await _repository.savePreferences(
-          goal: goalName,
+          goal: goalId,
           daysPerWeek: days,
         );
         emit(OnBoardingSuccess());
       } catch (e) {
+        emit(OnBoardingUpdated(
+            selectedGoal: currentState.selectedGoal,
+            selectedDays: days,
+            goals: currentGoals,
+        ));
         emit(OnBoardingError(e.toString()));
       }
     }

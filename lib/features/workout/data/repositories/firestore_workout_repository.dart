@@ -39,7 +39,9 @@ class FirestoreWorkoutRepository implements WorkoutRepository {
         // 3. For each day: .collection('day_exercises')
         final exercisesSnapshot = await dayDoc.reference
             .collection('day_exercises')
-            .get();
+            .orderBy('order')
+            .get()
+            .catchError((_) => dayDoc.reference.collection('day_exercises').get());
 
         List<DayExercise> dayExercises = [];
 

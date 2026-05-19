@@ -1,185 +1,275 @@
 import 'package:intl/intl.dart';
+class Goal {
+  final String id;
+  final String titleEn;
+  final String titleAr;
+  final String subtitleEn;
+  final String subtitleAr;
 
-String _getLocalized(Map<String, dynamic> json, String keyEn, String keyAr) {
-  final isArabic = Intl.getCurrentLocale().contains('ar');
-  return json[isArabic ? keyAr : keyEn] ?? json[keyEn] ?? '';
+  const Goal({
+    required this.id,
+    required this.titleEn,
+    required this.titleAr,
+    required this.subtitleEn,
+    required this.subtitleAr,
+  });
+
+  String get title => Intl.getCurrentLocale().contains('ar') ? titleAr : titleEn;
+  String get subtitle => Intl.getCurrentLocale().contains('ar') ? subtitleAr : subtitleEn;
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title_en': titleEn,
+        'title_ar': titleAr,
+        'subtitle_en': subtitleEn,
+        'subtitle_ar': subtitleAr,
+      };
+
+  factory Goal.fromJson(Map<String, dynamic> json) => Goal(
+        id: json['id'] ?? '',
+        titleEn: json['title_en'] ?? '',
+        titleAr: json['title_ar'] ?? '',
+        subtitleEn: json['subtitle_en'] ?? '',
+        subtitleAr: json['subtitle_ar'] ?? '',
+      );
 }
 
 class WorkoutPlan {
   final String id;
-  final String name;
-  final String goal;
+  final String goalId;
   final int daysPerWeek;
-  final String level;
-  final String description;
+  final String planNameEn;
+  final String planNameAr;
+  final String descriptionEn;
+  final String descriptionAr;
   final List<WorkoutDay> days;
 
   const WorkoutPlan({
     required this.id,
-    required this.name,
-    required this.goal,
+    required this.goalId,
     required this.daysPerWeek,
-    required this.level,
-    required this.description,
+    required this.planNameEn,
+    required this.planNameAr,
+    required this.descriptionEn,
+    required this.descriptionAr,
     required this.days,
   });
 
+  String get name => Intl.getCurrentLocale().contains('ar') ? planNameAr : planNameEn;
+  String get description => Intl.getCurrentLocale().contains('ar') ? descriptionAr : descriptionEn;
+
   Map<String, dynamic> toJson() => {
         'id': id,
-        'plan_name_en': name,
-        'goal_id': goal,
+        'goal_id': goalId,
         'days_per_week': daysPerWeek,
-        'level': level,
-        'description_en': description,
+        'plan_name_en': planNameEn,
+        'plan_name_ar': planNameAr,
+        'description_en': descriptionEn,
+        'description_ar': descriptionAr,
         'days': days.map((e) => e.toJson()).toList(),
       };
 
   factory WorkoutPlan.fromJson(Map<String, dynamic> json, {List<WorkoutDay> days = const []}) => WorkoutPlan(
         id: json['id'] ?? '',
-        name: _getLocalized(json, 'plan_name_en', 'plan_name_ar'),
-        goal: json['goal_id'] ?? json['goal'] ?? '',
-        daysPerWeek: json['days_per_week'] ?? json['daysPerWeek'] ?? 0,
-        level: json['level'] ?? '',
-        description: _getLocalized(json, 'description_en', 'description_ar'),
+        goalId: json['goal_id'] ?? '',
+        daysPerWeek: json['days_per_week'] ?? 0,
+        planNameEn: json['plan_name_en'] ?? '',
+        planNameAr: json['plan_name_ar'] ?? '',
+        descriptionEn: json['description_en'] ?? '',
+        descriptionAr: json['description_ar'] ?? '',
         days: days.isNotEmpty ? days : (json['workouts'] as List?)?.map((e) => WorkoutDay.fromJson(e)).toList() ?? [],
       );
 }
 
 class WorkoutDay {
   final int dayNumber;
-  final String name;
-  final String focus;
+  final String focusEn;
+  final String focusAr;
   final List<DayExercise> exercises;
 
   const WorkoutDay({
     required this.dayNumber,
-    required this.name,
-    required this.focus,
+    required this.focusEn,
+    required this.focusAr,
     required this.exercises,
   });
 
+  String get focus => Intl.getCurrentLocale().contains('ar') ? focusAr : focusEn;
+  // Fallback for some previous code trying to use name
+  String get name => 'Day $dayNumber - $focus'; 
+
   Map<String, dynamic> toJson() => {
         'day_number': dayNumber,
-        'name': name,
-        'focus_en': focus,
+        'focus_en': focusEn,
+        'focus_ar': focusAr,
         'exercises': exercises.map((e) => e.toJson()).toList(),
       };
 
   factory WorkoutDay.fromJson(Map<String, dynamic> json, {List<DayExercise> exercises = const []}) => WorkoutDay(
-        dayNumber: json['day_number'] ?? json['dayNumber'] ?? 0,
-        name: json['name'] ?? '',
-        focus: _getLocalized(json, 'focus_en', 'focus_ar'),
+        dayNumber: json['day_number'] ?? 0,
+        focusEn: json['focus_en'] ?? '',
+        focusAr: json['focus_ar'] ?? '',
         exercises: exercises.isNotEmpty ? exercises : (json['exercises'] as List?)?.map((e) => DayExercise.fromJson(e)).toList() ?? [],
       );
 }
 
 class DayExercise {
   final String exerciseId;
-  final int order;
-  final int sets;
-  final String reps;
-  final String restTime;
   final String? notes;
+  final int order;
+  final String repsEn;
+  final String repsAr;
+  final int sets;
+  final String restTimeEn;
+  final String restTimeAr;
   final Exercise? exerciseDetails;
 
   const DayExercise({
     required this.exerciseId,
-    required this.order,
-    required this.sets,
-    required this.reps,
-    required this.restTime,
     this.notes,
+    required this.order,
+    required this.repsEn,
+    required this.repsAr,
+    required this.sets,
+    required this.restTimeEn,
+    required this.restTimeAr,
     this.exerciseDetails,
   });
 
+  String get reps => Intl.getCurrentLocale().contains('ar') ? repsAr : repsEn;
+  String get restTime => Intl.getCurrentLocale().contains('ar') ? restTimeAr : restTimeEn;
+
   DayExercise copyWith({
     String? exerciseId,
-    int? order,
-    int? sets,
-    String? reps,
-    String? restTime,
     String? notes,
+    int? order,
+    String? repsEn,
+    String? repsAr,
+    int? sets,
+    String? restTimeEn,
+    String? restTimeAr,
     Exercise? exerciseDetails,
   }) {
     return DayExercise(
       exerciseId: exerciseId ?? this.exerciseId,
-      order: order ?? this.order,
-      sets: sets ?? this.sets,
-      reps: reps ?? this.reps,
-      restTime: restTime ?? this.restTime,
       notes: notes ?? this.notes,
+      order: order ?? this.order,
+      repsEn: repsEn ?? this.repsEn,
+      repsAr: repsAr ?? this.repsAr,
+      sets: sets ?? this.sets,
+      restTimeEn: restTimeEn ?? this.restTimeEn,
+      restTimeAr: restTimeAr ?? this.restTimeAr,
       exerciseDetails: exerciseDetails ?? this.exerciseDetails,
     );
   }
 
   Map<String, dynamic> toJson() => {
-        'exercise_id': exerciseId,
-        'order': order,
-        'sets': sets,
-        'reps_en': reps,
-        'rest_time_en': restTime,
+        'exerciseId': exerciseId,
         'notes': notes,
+        'order': order,
+        'reps_en': repsEn,
+        'reps_ar': repsAr,
+        'sets': sets,
+        'rest_time_en': restTimeEn,
+        'rest_time_ar': restTimeAr,
         'exerciseDetails': exerciseDetails?.toJson(),
       };
 
   factory DayExercise.fromJson(Map<String, dynamic> json, {Exercise? exerciseDetails}) => DayExercise(
-        exerciseId: json['exercise_id'] ?? json['exerciseId'] ?? '',
-        order: json['order'] ?? 0,
-        sets: json['sets'] ?? 0,
-        reps: _getLocalized(json, 'reps_en', 'reps_ar'),
-        restTime: _getLocalized(json, 'rest_time_en', 'rest_time_ar'),
+        exerciseId: json['exerciseId'] ?? json['exercise_id'] ?? '',
         notes: json['notes'],
+        order: json['order'] ?? 0,
+        repsEn: json['reps_en'] ?? '',
+        repsAr: json['reps_ar'] ?? '',
+        sets: json['sets'] ?? 0,
+        restTimeEn: json['rest_time_en'] ?? '',
+        restTimeAr: json['rest_time_ar'] ?? '',
         exerciseDetails: exerciseDetails ?? (json['exerciseDetails'] != null ? Exercise.fromJson(json['exerciseDetails']) : null),
       );
 }
 
 class Exercise {
   final String id;
-  final String name;
-  final String muscleGroup;
-  final String equipment;
-  final String difficulty;
-  final String gifUrl;
-  final List<String> instructions;
-  final String category;
-  final List<String> targetMuscles;
+  final String nameEn;
+  final String nameAr;
+  final String muscleGroupEn;
+  final String muscleGroupAr;
+  final String equipmentEn;
+  final String equipmentAr;
+  final String difficultyEn;
+  final String difficultyAr;
+  final String categoryEn;
+  final String categoryAr;
+  final List<String> targetMusclesEn;
+  final List<String> targetMusclesAr;
+  final String videoUrl;
+  final List<String> instructionsEn;
+  final List<String> instructionsAr;
 
   const Exercise({
     required this.id,
-    required this.name,
-    required this.muscleGroup,
-    required this.equipment,
-    required this.difficulty,
-    required this.gifUrl,
-    required this.instructions,
-    required this.category,
-    required this.targetMuscles,
+    required this.nameEn,
+    required this.nameAr,
+    required this.muscleGroupEn,
+    required this.muscleGroupAr,
+    required this.equipmentEn,
+    required this.equipmentAr,
+    required this.difficultyEn,
+    required this.difficultyAr,
+    required this.categoryEn,
+    required this.categoryAr,
+    required this.targetMusclesEn,
+    required this.targetMusclesAr,
+    required this.videoUrl,
+    required this.instructionsEn,
+    required this.instructionsAr,
   });
+
+  String get name => Intl.getCurrentLocale().contains('ar') ? nameAr : nameEn;
+  String get muscleGroup => Intl.getCurrentLocale().contains('ar') ? muscleGroupAr : muscleGroupEn;
+  String get equipment => Intl.getCurrentLocale().contains('ar') ? equipmentAr : equipmentEn;
+  String get difficulty => Intl.getCurrentLocale().contains('ar') ? difficultyAr : difficultyEn;
+  String get category => Intl.getCurrentLocale().contains('ar') ? categoryAr : categoryEn;
+  List<String> get targetMuscles => Intl.getCurrentLocale().contains('ar') ? targetMusclesAr : targetMusclesEn;
+  List<String> get instructions => Intl.getCurrentLocale().contains('ar') ? instructionsAr : instructionsEn;
 
   Map<String, dynamic> toJson() => {
         'id': id,
-        'name_en': name,
-        'muscleGroup_en': muscleGroup,
-        'equipment_en': equipment,
-        'difficulty': difficulty,
-        'gifUrl': gifUrl,
-        'instructions_en': instructions,
-        'category_en': category,
-        'targetMuscles_en': targetMuscles,
+        'name_en': nameEn,
+        'name_ar': nameAr,
+        'muscleGroup_en': muscleGroupEn,
+        'muscleGroup_ar': muscleGroupAr,
+        'equipment_en': equipmentEn,
+        'equipment_ar': equipmentAr,
+        'difficulty_en': difficultyEn,
+        'difficulty_ar': difficultyAr,
+        'category_en': categoryEn,
+        'category_ar': categoryAr,
+        'targetMuscles_en': targetMusclesEn,
+        'targetMuscles_ar': targetMusclesAr,
+        'videoUrl': videoUrl,
+        'instructions_en': instructionsEn,
+        'instructions_ar': instructionsAr,
       };
 
   factory Exercise.fromJson(Map<String, dynamic> json) {
-    final isArabic = Intl.getCurrentLocale().contains('ar');
     return Exercise(
       id: json['id'] ?? '',
-      name: _getLocalized(json, 'name_en', 'name_ar'),
-      muscleGroup: _getLocalized(json, 'muscleGroup_en', 'muscleGroup_ar'),
-      equipment: _getLocalized(json, 'equipment_en', 'equipment_ar'),
-      difficulty: json['difficulty'] ?? '',
-      gifUrl: json['gifUrl'] ?? '',
-      instructions: List<String>.from(json[isArabic ? 'instructions_ar' : 'instructions_en'] ?? json['instructions_en'] ?? []),
-      category: _getLocalized(json, 'category_en', 'category_ar'),
-      targetMuscles: List<String>.from(json[isArabic ? 'targetMuscles_ar' : 'targetMuscles_en'] ?? json['targetMuscles_en'] ?? []),
+      nameEn: json['name_en'] ?? '',
+      nameAr: json['name_ar'] ?? '',
+      muscleGroupEn: json['muscleGroup_en'] ?? '',
+      muscleGroupAr: json['muscleGroup_ar'] ?? '',
+      equipmentEn: json['equipment_en'] ?? '',
+      equipmentAr: json['equipment_ar'] ?? '',
+      difficultyEn: json['difficulty_en'] ?? '',
+      difficultyAr: json['difficulty_ar'] ?? '',
+      categoryEn: json['category_en'] ?? '',
+      categoryAr: json['category_ar'] ?? '',
+      targetMusclesEn: List<String>.from(json['targetMuscles_en'] ?? []),
+      targetMusclesAr: List<String>.from(json['targetMuscles_ar'] ?? []),
+      videoUrl: json['videoUrl'] ?? '',
+      instructionsEn: List<String>.from(json['instructions_en'] ?? []),
+      instructionsAr: List<String>.from(json['instructions_ar'] ?? []),
     );
   }
 }

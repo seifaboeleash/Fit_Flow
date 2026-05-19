@@ -34,8 +34,8 @@ class ExerciseDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 250.h,
                 color: AppColors.grey,
-                child: exercise.gifUrl.isNotEmpty
-                    ? Image.network(exercise.gifUrl, fit: BoxFit.cover, errorBuilder: (c, e, s) => Center(child: Icon(Icons.image, size: 50.r, color: AppColors.white)))
+                child: exercise.videoUrl.isNotEmpty
+                    ? Image.network(exercise.videoUrl, fit: BoxFit.cover, errorBuilder: (c, e, s) => Center(child: Icon(Icons.image, size: 50.r, color: AppColors.white)))
                     : Center(child: Icon(Icons.image, size: 50.r, color: AppColors.white)),
               ),
             ),

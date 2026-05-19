@@ -4,11 +4,18 @@ sealed class OnBoardingState {
   const OnBoardingState();
 }
 
-final class OnBoardingUpdated extends OnBoardingState {
-  final WorkoutGoal? selectedGoal;
-  final int selectedDays;
+final class OnBoardingLoadingGoals extends OnBoardingState {}
 
-  const OnBoardingUpdated({this.selectedGoal, this.selectedDays = 3});
+final class OnBoardingUpdated extends OnBoardingState {
+  final Goal? selectedGoal;
+  final int selectedDays;
+  final List<Goal> goals;
+
+  const OnBoardingUpdated({
+    this.selectedGoal, 
+    this.selectedDays = 3,
+    this.goals = const [],
+  });
 }
 
 final class OnBoardingLoading extends OnBoardingState {}
