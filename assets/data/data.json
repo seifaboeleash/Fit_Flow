@@ -1,0 +1,3637 @@
+{
+    "goals": [
+        {
+            "id": "get_strong",
+            "title_en": "Get Strong",
+            "title_ar": "زيادة القوة",
+            "subtitle_en": "Focus on heavy compound movements to build pure strength.",
+            "subtitle_ar": "التركيز على التمارين المركبة الثقيلة لبناء قوة عضلية صافية."
+        },
+        {
+            "id": "build_muscle",
+            "title_en": "Build Muscle",
+            "title_ar": "بناء العضلات",
+            "subtitle_en": "Hypertrophy training designed to maximize muscle growth.",
+            "subtitle_ar": "تمارين ضخامة مصممة لزيادة الكتلة العضلية بأكبر قدر ممكن."
+        },
+        {
+            "id": "general_fitness",
+            "title_en": "General Fitness",
+            "title_ar": "لياقة عامة",
+            "subtitle_en": "A balanced routine combining strength, cardio, and endurance.",
+            "subtitle_ar": "روتين متوازن يجمع بين القوة، الكارديو، وقوة التحمل."
+        }
+    ],
+    "workout_plans": [
+        {
+            "id": "get_strong_2_days",
+            "goal_id": "get_strong",
+            "days_per_week": 2,
+            "plan_name_en": "Get Strong - 2 Days",
+            "plan_name_ar": "زيادة القوة - 2 أيام",
+            "description_en": "Focus on heavy compound movements to build pure strength.",
+            "description_ar": "التركيز على التمارين المركبة الثقيلة لبناء قوة عضلية صافية.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Heavy Lower Body",
+                    "focus_ar": "جزء سفلي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Heavy Upper Body",
+                    "focus_ar": "جزء علوي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "get_strong_3_days",
+            "goal_id": "get_strong",
+            "days_per_week": 3,
+            "plan_name_en": "Get Strong - 3 Days",
+            "plan_name_ar": "زيادة القوة - 3 أيام",
+            "description_en": "Focus on heavy compound movements to build pure strength.",
+            "description_ar": "التركيز على التمارين المركبة الثقيلة لبناء قوة عضلية صافية.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Heavy Lower Body",
+                    "focus_ar": "جزء سفلي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Heavy Upper Body",
+                    "focus_ar": "جزء علوي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Full Body Power",
+                    "focus_ar": "قوة شاملة للجسم",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "get_strong_4_days",
+            "goal_id": "get_strong",
+            "days_per_week": 4,
+            "plan_name_en": "Get Strong - 4 Days",
+            "plan_name_ar": "زيادة القوة - 4 أيام",
+            "description_en": "Focus on heavy compound movements to build pure strength.",
+            "description_ar": "التركيز على التمارين المركبة الثقيلة لبناء قوة عضلية صافية.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Heavy Lower Body",
+                    "focus_ar": "جزء سفلي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Heavy Upper Body",
+                    "focus_ar": "جزء علوي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Full Body Power",
+                    "focus_ar": "قوة شاملة للجسم",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 4,
+                    "focus_en": "Accessory & Weaknesses",
+                    "focus_ar": "تمارين مساعدة ونقاط الضعف",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "get_strong_5_days",
+            "goal_id": "get_strong",
+            "days_per_week": 5,
+            "plan_name_en": "Get Strong - 5 Days",
+            "plan_name_ar": "زيادة القوة - 5 أيام",
+            "description_en": "Focus on heavy compound movements to build pure strength.",
+            "description_ar": "التركيز على التمارين المركبة الثقيلة لبناء قوة عضلية صافية.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Heavy Lower Body",
+                    "focus_ar": "جزء سفلي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Heavy Upper Body",
+                    "focus_ar": "جزء علوي (أوزان ثقيلة)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Full Body Power",
+                    "focus_ar": "قوة شاملة للجسم",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 4,
+                    "focus_en": "Accessory & Weaknesses",
+                    "focus_ar": "تمارين مساعدة ونقاط الضعف",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_bench",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 5,
+                    "focus_en": "Speed & Technique",
+                    "focus_ar": "سرعة وتكنيك",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_ohp",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_barbell_row",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_sumo_deadlift",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        },
+                        {
+                            "exercise_id": "ex_squat",
+                            "sets": 5,
+                            "reps_en": "3-5",
+                            "reps_ar": "3-5",
+                            "rest_time_en": "3-5 min",
+                            "rest_time_ar": "3-5 دقائق"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "build_muscle_2_days",
+            "goal_id": "build_muscle",
+            "days_per_week": 2,
+            "plan_name_en": "Build Muscle - 2 Days",
+            "plan_name_ar": "بناء العضلات - 2 أيام",
+            "description_en": "Hypertrophy training designed to maximize muscle growth.",
+            "description_ar": "تمارين ضخامة مصممة لزيادة الكتلة العضلية بأكبر قدر ممكن.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Push (Chest, Shoulders, Triceps)",
+                    "focus_ar": "دفع (صدر، كتف، ترايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Pull (Back, Biceps)",
+                    "focus_ar": "سحب (ظهر، بايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "build_muscle_3_days",
+            "goal_id": "build_muscle",
+            "days_per_week": 3,
+            "plan_name_en": "Build Muscle - 3 Days",
+            "plan_name_ar": "بناء العضلات - 3 أيام",
+            "description_en": "Hypertrophy training designed to maximize muscle growth.",
+            "description_ar": "تمارين ضخامة مصممة لزيادة الكتلة العضلية بأكبر قدر ممكن.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Push (Chest, Shoulders, Triceps)",
+                    "focus_ar": "دفع (صدر، كتف، ترايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Pull (Back, Biceps)",
+                    "focus_ar": "سحب (ظهر، بايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Legs & Calves",
+                    "focus_ar": "أرجل وسمانة",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_extension",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "build_muscle_4_days",
+            "goal_id": "build_muscle",
+            "days_per_week": 4,
+            "plan_name_en": "Build Muscle - 4 Days",
+            "plan_name_ar": "بناء العضلات - 4 أيام",
+            "description_en": "Hypertrophy training designed to maximize muscle growth.",
+            "description_ar": "تمارين ضخامة مصممة لزيادة الكتلة العضلية بأكبر قدر ممكن.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Push (Chest, Shoulders, Triceps)",
+                    "focus_ar": "دفع (صدر، كتف، ترايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Pull (Back, Biceps)",
+                    "focus_ar": "سحب (ظهر، بايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Legs & Calves",
+                    "focus_ar": "أرجل وسمانة",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_extension",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 4,
+                    "focus_en": "Upper Body Hypertrophy",
+                    "focus_ar": "ضخامة الجزء العلوي",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_extension",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "build_muscle_5_days",
+            "goal_id": "build_muscle",
+            "days_per_week": 5,
+            "plan_name_en": "Build Muscle - 5 Days",
+            "plan_name_ar": "بناء العضلات - 5 أيام",
+            "description_en": "Hypertrophy training designed to maximize muscle growth.",
+            "description_ar": "تمارين ضخامة مصممة لزيادة الكتلة العضلية بأكبر قدر ممكن.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Push (Chest, Shoulders, Triceps)",
+                    "focus_ar": "دفع (صدر، كتف، ترايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Pull (Back, Biceps)",
+                    "focus_ar": "سحب (ظهر، بايسبس)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Legs & Calves",
+                    "focus_ar": "أرجل وسمانة",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_tricep_ext",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_extension",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 4,
+                    "focus_en": "Upper Body Hypertrophy",
+                    "focus_ar": "ضخامة الجزء العلوي",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_leg_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_extension",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 5,
+                    "focus_en": "Lower Body & Core",
+                    "focus_ar": "جزء سفلي وبطن",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_incline_db_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lat_pulldown",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_leg_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_db_shoulder_press",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bicep_curl",
+                            "sets": 4,
+                            "reps_en": "8-12",
+                            "reps_ar": "8-12",
+                            "rest_time_en": "90s",
+                            "rest_time_ar": "90 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "general_fitness_2_days",
+            "goal_id": "general_fitness",
+            "days_per_week": 2,
+            "plan_name_en": "General Fitness - 2 Days",
+            "plan_name_ar": "لياقة عامة - 2 أيام",
+            "description_en": "A balanced routine combining strength, cardio, and endurance.",
+            "description_ar": "روتين متوازن يجمع بين القوة، الكارديو، وقوة التحمل.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Full Body Circuit",
+                    "focus_ar": "دائرة تمارين للجسم كامل",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Cardio & Core",
+                    "focus_ar": "كارديو وعضلات البطن",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "general_fitness_3_days",
+            "goal_id": "general_fitness",
+            "days_per_week": 3,
+            "plan_name_en": "General Fitness - 3 Days",
+            "plan_name_ar": "لياقة عامة - 3 أيام",
+            "description_en": "A balanced routine combining strength, cardio, and endurance.",
+            "description_ar": "روتين متوازن يجمع بين القوة، الكارديو، وقوة التحمل.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Full Body Circuit",
+                    "focus_ar": "دائرة تمارين للجسم كامل",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Cardio & Core",
+                    "focus_ar": "كارديو وعضلات البطن",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Strength & Mobility",
+                    "focus_ar": "قوة ومرونة",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "general_fitness_4_days",
+            "goal_id": "general_fitness",
+            "days_per_week": 4,
+            "plan_name_en": "General Fitness - 4 Days",
+            "plan_name_ar": "لياقة عامة - 4 أيام",
+            "description_en": "A balanced routine combining strength, cardio, and endurance.",
+            "description_ar": "روتين متوازن يجمع بين القوة، الكارديو، وقوة التحمل.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Full Body Circuit",
+                    "focus_ar": "دائرة تمارين للجسم كامل",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Cardio & Core",
+                    "focus_ar": "كارديو وعضلات البطن",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Strength & Mobility",
+                    "focus_ar": "قوة ومرونة",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 4,
+                    "focus_en": "HIIT Workout",
+                    "focus_ar": "تمارين متقطعة عالية الكثافة (HIIT)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "general_fitness_5_days",
+            "goal_id": "general_fitness",
+            "days_per_week": 5,
+            "plan_name_en": "General Fitness - 5 Days",
+            "plan_name_ar": "لياقة عامة - 5 أيام",
+            "description_en": "A balanced routine combining strength, cardio, and endurance.",
+            "description_ar": "روتين متوازن يجمع بين القوة، الكارديو، وقوة التحمل.",
+            "workouts": [
+                {
+                    "day_number": 1,
+                    "focus_en": "Full Body Circuit",
+                    "focus_ar": "دائرة تمارين للجسم كامل",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 2,
+                    "focus_en": "Cardio & Core",
+                    "focus_ar": "كارديو وعضلات البطن",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 3,
+                    "focus_en": "Strength & Mobility",
+                    "focus_ar": "قوة ومرونة",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 4,
+                    "focus_en": "HIIT Workout",
+                    "focus_ar": "تمارين متقطعة عالية الكثافة (HIIT)",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_burpee",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_pushup",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                },
+                {
+                    "day_number": 5,
+                    "focus_en": "Active Recovery",
+                    "focus_ar": "استشفاء نشط",
+                    "exercises": [
+                        {
+                            "exercise_id": "ex_bodyweight_squat",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_plank",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_lunge",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_jumping_jack",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        },
+                        {
+                            "exercise_id": "ex_mountain_climber",
+                            "sets": 3,
+                            "reps_en": "30 sec",
+                            "reps_ar": "30 ثانية",
+                            "rest_time_en": "45s",
+                            "rest_time_ar": "45 ثانية"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exercises": [
+        {
+            "id": "ex_squat",
+            "name_en": "Barbell squat",
+            "name_ar": "سكوات بالبار",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Quads",
+                "Glutes",
+                "Hamstrings"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "الأرداف",
+                "الفخذ الخلفي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Place the barbell on your upper traps and step back from the rack",
+                "Stand with feet shoulder-width apart, toes slightly out",
+                "Take a deep breath, brace your core",
+                "Lower yourself until thighs are parallel to the floor",
+                "Drive through your heels to return to standing"
+            ],
+            "instructions_ar": [
+                "ضع البار على الجزء العلوي من ظهرك وابتعد عن الرف",
+                "قف بعرض الكتفين مع توجيه أصابع القدم للخارج قليلاً",
+                "خذ نفساً عميقاً وشد عضلات البطن",
+                "انزل حتى تصبح الفخذين موازيين للأرض",
+                "ادفع من كعبيك للعودة لوضع الوقوف"
+            ]
+        },
+        {
+            "id": "ex_deadlift",
+            "name_en": "Deadlift",
+            "name_ar": "ديدليفت",
+            "muscleGroup_en": "Back",
+            "muscleGroup_ar": "الظهر",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Advanced",
+            "difficulty_ar": "متقدم",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Hamstrings",
+                "Glutes",
+                "Lower Back"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الخلفي",
+                "الأرداف",
+                "أسفل الظهر"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand with mid-foot under the bar",
+                "Bend and grab the bar shoulder-width apart",
+                "Bend knees until shins touch the bar",
+                "Lift your chest up and straighten your back",
+                "Stand up with the weight"
+            ],
+            "instructions_ar": [
+                "قف بحيث يكون منتصف قدمك تحت البار",
+                "انحنِ وأمسك البار بعرض الكتفين",
+                "اثنِ ركبتيك حتى تلامس قصبة الساق البار",
+                "ارفع صدرك وافرد ظهرك",
+                "قف بشكل مستقيم حاملاً الوزن"
+            ]
+        },
+        {
+            "id": "ex_bench",
+            "name_en": "Barbell bench press",
+            "name_ar": "بنش برس بالبار",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Chest",
+                "Triceps",
+                "Shoulders"
+            ],
+            "targetMuscles_ar": [
+                "الصدر",
+                "الترايسبس",
+                "الكتف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lie on the bench with eyes under the bar",
+                "Grab the bar wider than shoulder-width",
+                "Unrack the bar and lower it to your mid-chest",
+                "Press the bar back up to the starting position"
+            ],
+            "instructions_ar": [
+                "استلقِ على المقعد وعيناك تحت البار",
+                "أمسك البار بقبضة أوسع من الكتفين",
+                "ارفع البار وأنزله حتى منتصف الصدر",
+                "ادفع البار لأعلى للعودة لوضع البداية"
+            ]
+        },
+        {
+            "id": "ex_ohp",
+            "name_en": "Overhead press",
+            "name_ar": "أوفر هيد برس",
+            "muscleGroup_en": "Shoulders",
+            "muscleGroup_ar": "الكتف",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Shoulders",
+                "Triceps"
+            ],
+            "targetMuscles_ar": [
+                "الكتف",
+                "الترايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand with the bar on your front shoulders",
+                "Press the bar overhead in a straight line",
+                "Lock your elbows at the top",
+                "Lower the bar back to your shoulders"
+            ],
+            "instructions_ar": [
+                "قف والبار على مقدمة كتفيك",
+                "ادفع البار لأعلى في خط مستقيم",
+                "افرد كوعيك بالكامل في الأعلى",
+                "أنزل البار ببطء إلى كتفيك"
+            ]
+        },
+        {
+            "id": "ex_barbell_row",
+            "name_en": "Barbell row",
+            "name_ar": "تجديف بالبار",
+            "muscleGroup_en": "Back",
+            "muscleGroup_ar": "الظهر",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Lats",
+                "Rhomboids",
+                "Biceps"
+            ],
+            "targetMuscles_ar": [
+                "المجنص (الظهر الجانبي)",
+                "وسط الظهر",
+                "البايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Bend your torso forward until almost parallel to the floor",
+                "Grab the bar with an overhand grip",
+                "Pull the bar to your lower chest/upper stomach",
+                "Lower the bar under control"
+            ],
+            "instructions_ar": [
+                "انحنِ بجذعك للأمام حتى يكاد يوازي الأرض",
+                "أمسك البار بقبضة علوية",
+                "اسحب البار نحو أسفل صدرك أو أعلى بطنك",
+                "أنزل البار ببطء وتحكم"
+            ]
+        },
+        {
+            "id": "ex_front_squat",
+            "name_en": "Front squat",
+            "name_ar": "فرونت سكوات",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Advanced",
+            "difficulty_ar": "متقدم",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Quads",
+                "Core"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "عضلات البطن"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Rest the barbell on your front deltoids",
+                "Keep your elbows high and chest up",
+                "Squat down until thighs are parallel to the floor",
+                "Stand back up driving through your heels"
+            ],
+            "instructions_ar": [
+                "ضع البار على عضلات الكتف الأمامية",
+                "ارفع كوعيك لأعلى وحافظ على صدرك مشدوداً",
+                "انزل للسكوات حتى توازي فخذيك الأرض",
+                "قف وادفع من كعبيك"
+            ]
+        },
+        {
+            "id": "ex_incline_bench",
+            "name_en": "Incline bench press",
+            "name_ar": "بنش برس مائل",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Upper Chest",
+                "Shoulders",
+                "Triceps"
+            ],
+            "targetMuscles_ar": [
+                "الصدر العلوي",
+                "الكتف",
+                "الترايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lie on a 30-45 degree incline bench",
+                "Lower the bar to your upper chest",
+                "Press the bar upwards until arms are extended"
+            ],
+            "instructions_ar": [
+                "استلقِ على مقعد مائل بزاوية 30-45 درجة",
+                "أنزل البار إلى الجزء العلوي من صدرك",
+                "ادفع البار لأعلى حتى تمتد ذراعاك"
+            ]
+        },
+        {
+            "id": "ex_rdl",
+            "name_en": "Romanian deadlift",
+            "name_ar": "رومانيان ديدليفت",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Hamstrings",
+                "Glutes",
+                "Lower Back"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الخلفي",
+                "الأرداف",
+                "أسفل الظهر"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Hold the bar at hip level",
+                "Push your hips back and keep legs slightly bent",
+                "Lower the bar along your legs until you feel a stretch",
+                "Push hips forward to stand tall"
+            ],
+            "instructions_ar": [
+                "أمسك البار عند مستوى الحوض",
+                "ادفع حوضك للخلف مع ثني الركبتين قليلاً",
+                "أنزل البار بمحاذاة ساقيك حتى تشعر بتمدد",
+                "ادفع حوضك للأمام للوقوف"
+            ]
+        },
+        {
+            "id": "ex_weighted_pullup",
+            "name_en": "Weighted pull-up",
+            "name_ar": "عقلة بأوزان",
+            "muscleGroup_en": "Back",
+            "muscleGroup_ar": "الظهر",
+            "equipment_en": "Weighted Bodyweight",
+            "equipment_ar": "وزن الجسم مع أوزان",
+            "difficulty_en": "Advanced",
+            "difficulty_ar": "متقدم",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Lats",
+                "Biceps"
+            ],
+            "targetMuscles_ar": [
+                "المجنص (الظهر الجانبي)",
+                "البايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Attach a weight belt or hold a dumbbell between your feet",
+                "Hang from the bar with an overhand grip",
+                "Pull your chin over the bar",
+                "Lower yourself smoothly"
+            ],
+            "instructions_ar": [
+                "اربط حزام أوزان أو أمسك دمبل بين قدميك",
+                "تدلى من العقلة بقبضة علوية",
+                "اسحب نفسك حتى يتجاوز ذقنك البار",
+                "أنزل نفسك ببطء"
+            ]
+        },
+        {
+            "id": "ex_weighted_dip",
+            "name_en": "Weighted dip",
+            "name_ar": "ديبس بأوزان",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Weighted Bodyweight",
+            "equipment_ar": "وزن الجسم مع أوزان",
+            "difficulty_en": "Advanced",
+            "difficulty_ar": "متقدم",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Triceps",
+                "Chest",
+                "Shoulders"
+            ],
+            "targetMuscles_ar": [
+                "الترايسبس",
+                "الصدر",
+                "الكتف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Attach weight using a dip belt",
+                "Support your body on the parallel bars",
+                "Lower your body until shoulders are below elbows",
+                "Push back up to the top"
+            ],
+            "instructions_ar": [
+                "أضف وزناً باستخدام حزام الديبس",
+                "ادعم جسمك على البارين المتوازيين",
+                "أنزل جسمك حتى يصبح كتفاك تحت مستوى كوعيك",
+                "ادفع جسمك لأعلى مرة أخرى"
+            ]
+        },
+        {
+            "id": "ex_sumo_deadlift",
+            "name_en": "Sumo deadlift",
+            "name_ar": "سومو ديدليفت",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Advanced",
+            "difficulty_ar": "متقدم",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Glutes",
+                "Quads",
+                "Hamstrings"
+            ],
+            "targetMuscles_ar": [
+                "الأرداف",
+                "الفخذ الأمامي",
+                "الفخذ الخلفي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand with a very wide stance, toes pointed out",
+                "Grip the bar inside your knees",
+                "Drop your hips and lift your chest",
+                "Drive through your legs to stand up"
+            ],
+            "instructions_ar": [
+                "قف بمسافة واسعة جداً بين قدميك، والأصابع للخارج",
+                "أمسك البار من الداخل بين ركبتيك",
+                "أنزل حوضك وارفع صدرك",
+                "ادفع بقدميك للوقوف"
+            ]
+        },
+        {
+            "id": "ex_close_grip_bench",
+            "name_en": "Close grip bench press",
+            "name_ar": "بنش برس قبضة ضيقة",
+            "muscleGroup_en": "Arms",
+            "muscleGroup_ar": "الذراعين",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Strength",
+            "category_ar": "قوة",
+            "targetMuscles_en": [
+                "Triceps",
+                "Chest"
+            ],
+            "targetMuscles_ar": [
+                "الترايسبس",
+                "الصدر"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lie on the bench and grip the bar shoulder-width or slightly closer",
+                "Lower the bar to your chest, keeping elbows tucked",
+                "Press the weight up using your triceps"
+            ],
+            "instructions_ar": [
+                "استلقِ على المقعد وأمسك البار بقبضة ضيقة",
+                "أنزل البار لصدرك مع إبقاء كوعيك قريبين من جسمك",
+                "ادفع الوزن لأعلى باستخدام عضلات الترايسبس"
+            ]
+        },
+        {
+            "id": "ex_incline_db_press",
+            "name_en": "Incline dumbbell press",
+            "name_ar": "ضغط دمبل مائل",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Upper Chest",
+                "Shoulders"
+            ],
+            "targetMuscles_ar": [
+                "الصدر العلوي",
+                "الكتف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit on an incline bench with dumbbells on your knees",
+                "Kick the weights up to your shoulders",
+                "Press the dumbbells up and together",
+                "Lower them under control"
+            ],
+            "instructions_ar": [
+                "اجلس على مقعد مائل والدمبلز على ركبتيك",
+                "ارفع الأوزان لكتفيك باستخدام ركبتيك",
+                "ادفع الدمبلز لأعلى وللداخل",
+                "أنزلهم بتحكم"
+            ]
+        },
+        {
+            "id": "ex_cable_fly",
+            "name_en": "Cable fly",
+            "name_ar": "فلاي كابل",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Cable",
+            "equipment_ar": "كابل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Chest"
+            ],
+            "targetMuscles_ar": [
+                "الصدر"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Set the pulleys high and grab the handles",
+                "Step forward and slightly bend your elbows",
+                "Bring your hands together in front of your chest",
+                "Slowly open your arms back up"
+            ],
+            "instructions_ar": [
+                "اضبط البكرات عالياً وأمسك المقابض",
+                "خذ خطوة للأمام واثنِ كوعيك قليلاً",
+                "اجمع يديك معاً أمام صدرك",
+                "افتح ذراعيك ببطء للوضع الأول"
+            ]
+        },
+        {
+            "id": "ex_lat_pulldown",
+            "name_en": "Lat pulldown",
+            "name_ar": "لات بول داون",
+            "muscleGroup_en": "Back",
+            "muscleGroup_ar": "الظهر",
+            "equipment_en": "Machine",
+            "equipment_ar": "جهاز",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Lats",
+                "Biceps"
+            ],
+            "targetMuscles_ar": [
+                "المجنص (الظهر الجانبي)",
+                "البايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit at the machine and secure your knees",
+                "Grab the bar with a wide grip",
+                "Pull the bar down to your upper chest",
+                "Slowly release the bar back up"
+            ],
+            "instructions_ar": [
+                "اجلس على الجهاز وثبت ركبتيك",
+                "أمسك البار بقبضة واسعة",
+                "اسحب البار لأسفل حتى أعلى صدرك",
+                "أعد البار لأعلى ببطء"
+            ]
+        },
+        {
+            "id": "ex_seated_row",
+            "name_en": "Seated cable row",
+            "name_ar": "تجديف كابل",
+            "muscleGroup_en": "Back",
+            "muscleGroup_ar": "الظهر",
+            "equipment_en": "Cable",
+            "equipment_ar": "كابل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Back",
+                "Biceps"
+            ],
+            "targetMuscles_ar": [
+                "الظهر",
+                "البايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit on the machine with feet on the pads",
+                "Keep your back straight and grab the handle",
+                "Pull the handle to your stomach",
+                "Squeeze your back muscles and slowly release"
+            ],
+            "instructions_ar": [
+                "اجلس على الجهاز وضع قدميك على السنادات",
+                "حافظ على ظهرك مستقيماً وأمسك المقبض",
+                "اسحب المقبض نحو بطنك",
+                "اعصر عضلات ظهرك ثم أعد المقبض ببطء"
+            ]
+        },
+        {
+            "id": "ex_leg_press",
+            "name_en": "Leg press",
+            "name_ar": "ليج برس",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Machine",
+            "equipment_ar": "جهاز",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Quads",
+                "Glutes",
+                "Hamstrings"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "الأرداف",
+                "الفخذ الخلفي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit on the machine and place feet on the sled",
+                "Unlatch the safety and lower the weight until knees are at 90 degrees",
+                "Push the sled back up without locking your knees"
+            ],
+            "instructions_ar": [
+                "اجلس على الجهاز وضع قدميك على المنصة",
+                "حرر الأمان وأنزل الوزن حتى تصبح ركبتيك بزاوية 90 درجة",
+                "ادفع المنصة لأعلى دون فرد ركبتيك بالكامل"
+            ]
+        },
+        {
+            "id": "ex_leg_curl",
+            "name_en": "Leg curl",
+            "name_ar": "ليج كيرل",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Machine",
+            "equipment_ar": "جهاز",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Hamstrings"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الخلفي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Adjust the machine to fit your leg length",
+                "Lie face down or sit (depending on machine) and place legs under the pad",
+                "Curl the pad towards your glutes",
+                "Lower it slowly"
+            ],
+            "instructions_ar": [
+                "اضبط الجهاز ليناسب طول ساقيك",
+                "استلقِ على بطنك أو اجلس وضع ساقيك تحت الوسادة",
+                "اسحب الوسادة نحو أردافك",
+                "أنزلها ببطء"
+            ]
+        },
+        {
+            "id": "ex_leg_extension",
+            "name_en": "Leg extension",
+            "name_ar": "ليج إكستنشن",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Machine",
+            "equipment_ar": "جهاز",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Quads"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit on the machine with legs behind the pad",
+                "Extend your legs fully to lift the weight",
+                "Squeeze your quads at the top",
+                "Lower the weight slowly"
+            ],
+            "instructions_ar": [
+                "اجلس على الجهاز وساقيك خلف الوسادة",
+                "افرد ساقيك بالكامل لرفع الوزن",
+                "اعصر عضلات الفخذ الأمامية في الأعلى",
+                "أنزل الوزن ببطء"
+            ]
+        },
+        {
+            "id": "ex_db_shoulder_press",
+            "name_en": "Dumbbell shoulder press",
+            "name_ar": "ضغط دمبل للكتف",
+            "muscleGroup_en": "Shoulders",
+            "muscleGroup_ar": "الكتف",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Shoulders",
+                "Triceps"
+            ],
+            "targetMuscles_ar": [
+                "الكتف",
+                "الترايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit on a bench with back support",
+                "Hold dumbbells at shoulder height",
+                "Press the dumbbells overhead",
+                "Lower them back to shoulder level"
+            ],
+            "instructions_ar": [
+                "اجلس على مقعد ذو مسند للظهر",
+                "أمسك الدمبلز عند مستوى الكتف",
+                "ادفع الدمبلز لأعلى فوق رأسك",
+                "أنزلهم مجدداً لمستوى الكتف"
+            ]
+        },
+        {
+            "id": "ex_lateral_raise",
+            "name_en": "Lateral raise",
+            "name_ar": "رفع جانبي",
+            "muscleGroup_en": "Shoulders",
+            "muscleGroup_ar": "الكتف",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Side Deltoids"
+            ],
+            "targetMuscles_ar": [
+                "الكتف الجانبي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand holding dumbbells at your sides",
+                "Keep a slight bend in your elbows",
+                "Raise the weights to the sides until shoulder height",
+                "Lower them slowly"
+            ],
+            "instructions_ar": [
+                "قف ممسكاً الدمبلز بجانبك",
+                "اثنِ كوعيك انحناءة خفيفة",
+                "ارفع الأوزان للجانبين حتى مستوى الكتف",
+                "أنزلهم ببطء"
+            ]
+        },
+        {
+            "id": "ex_bicep_curl",
+            "name_en": "Bicep curl",
+            "name_ar": "كيرل بايسبس",
+            "muscleGroup_en": "Arms",
+            "muscleGroup_ar": "الذراعين",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Biceps"
+            ],
+            "targetMuscles_ar": [
+                "البايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand or sit holding dumbbells with palms facing forward",
+                "Curl the weights towards your shoulders",
+                "Keep your elbows pinned to your sides",
+                "Lower the weights slowly"
+            ],
+            "instructions_ar": [
+                "قف أو اجلس ممسكاً الدمبلز وباطن يدك للأمام",
+                "اسحب الأوزان نحو كتفيك",
+                "حافظ على كوعيك ثابتين بجانب جسمك",
+                "أنزل الأوزان ببطء"
+            ]
+        },
+        {
+            "id": "ex_tricep_ext",
+            "name_en": "Tricep cable extension",
+            "name_ar": "تريسبس كابل",
+            "muscleGroup_en": "Arms",
+            "muscleGroup_ar": "الذراعين",
+            "equipment_en": "Cable",
+            "equipment_ar": "كابل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Triceps"
+            ],
+            "targetMuscles_ar": [
+                "الترايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Attach a rope to a high pulley",
+                "Keep elbows tucked by your sides",
+                "Push the rope down until arms are fully extended",
+                "Return slowly to the starting position"
+            ],
+            "instructions_ar": [
+                "اربط حبل في بكرة عالية",
+                "ثبت كوعيك بجانب جسمك",
+                "ادفع الحبل لأسفل حتى تمتد ذراعاك بالكامل",
+                "عد ببطء لنقطة البداية"
+            ]
+        },
+        {
+            "id": "ex_hip_thrust",
+            "name_en": "Hip thrust",
+            "name_ar": "هيب ثراست",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Glutes",
+                "Hamstrings"
+            ],
+            "targetMuscles_ar": [
+                "الأرداف",
+                "الفخذ الخلفي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Place your upper back on a bench and a barbell across your hips",
+                "Plant your feet firmly on the floor",
+                "Thrust your hips upward until your body is in a straight line",
+                "Squeeze glutes and lower back down"
+            ],
+            "instructions_ar": [
+                "ضع أعلى ظهرك على مقعد والبار على حوضك",
+                "ثبت قدميك جيداً على الأرض",
+                "ادفع حوضك لأعلى حتى يستقيم جسمك",
+                "اعصر أردافك ثم أنزل الحوض للأسفل"
+            ]
+        },
+        {
+            "id": "ex_bulgarian_squat",
+            "name_en": "Bulgarian split squat",
+            "name_ar": "سكوات بلغاري",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Quads",
+                "Glutes"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "الأرداف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Rest one foot on a bench behind you",
+                "Hold dumbbells in your hands",
+                "Lower your back knee towards the floor",
+                "Push back up using your front leg"
+            ],
+            "instructions_ar": [
+                "ضع إحدى قدميك على مقعد خلفك",
+                "أمسك الدمبلز في يديك",
+                "أنزل ركبتك الخلفية نحو الأرض",
+                "ادفع جسمك لأعلى باستخدام قدمك الأمامية"
+            ]
+        },
+        {
+            "id": "ex_hammer_curl",
+            "name_en": "Hammer curl",
+            "name_ar": "هامر كيرل",
+            "muscleGroup_en": "Arms",
+            "muscleGroup_ar": "الذراعين",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Biceps",
+                "Forearms"
+            ],
+            "targetMuscles_ar": [
+                "البايسبس",
+                "السواعد"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Hold dumbbells with a neutral grip (palms facing each other)",
+                "Curl the weights towards your shoulders",
+                "Lower them under control"
+            ],
+            "instructions_ar": [
+                "أمسك الدمبلز بقبضة محايدة (باطن اليدين متقابلين)",
+                "اسحب الأوزان نحو كتفيك",
+                "أنزلها ببطء وتحكم"
+            ]
+        },
+        {
+            "id": "ex_face_pull",
+            "name_en": "Face pull",
+            "name_ar": "فيس بول",
+            "muscleGroup_en": "Shoulders",
+            "muscleGroup_ar": "الكتف",
+            "equipment_en": "Cable",
+            "equipment_ar": "كابل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Rear Deltoids",
+                "Traps"
+            ],
+            "targetMuscles_ar": [
+                "الكتف الخلفي",
+                "الترابيس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Set the cable at face level with a rope attachment",
+                "Pull the rope towards your face, separating your hands",
+                "Squeeze your upper back and rear delts",
+                "Slowly return to start"
+            ],
+            "instructions_ar": [
+                "اضبط الكابل عند مستوى الوجه مع حبل",
+                "اسحب الحبل نحو وجهك مع تفرقة يديك",
+                "اعصر أعلى ظهرك وعضلات الكتف الخلفية",
+                "عد للبداية ببطء"
+            ]
+        },
+        {
+            "id": "ex_skull_crusher",
+            "name_en": "Skull crusher",
+            "name_ar": "سكل كراشر",
+            "muscleGroup_en": "Arms",
+            "muscleGroup_ar": "الذراعين",
+            "equipment_en": "Barbell",
+            "equipment_ar": "بار",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Triceps"
+            ],
+            "targetMuscles_ar": [
+                "الترايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lie on a bench holding an EZ bar or dumbbells",
+                "Keep arms straight up, then bend at the elbows to lower weight towards your forehead",
+                "Push the weight back up to full extension"
+            ],
+            "instructions_ar": [
+                "استلقِ على مقعد ممسكاً ببار متعرج أو دمبلز",
+                "افرد ذراعيك لأعلى ثم اثنِ كوعيك لإنزال الوزن نحو جبهتك",
+                "ادفع الوزن لأعلى حتى تمتد ذراعيك"
+            ]
+        },
+        {
+            "id": "ex_db_fly",
+            "name_en": "Dumbbell fly",
+            "name_ar": "فلاي دمبل",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Dumbbell",
+            "equipment_ar": "دمبل",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Chest"
+            ],
+            "targetMuscles_ar": [
+                "الصدر"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lie on a flat bench holding dumbbells above your chest",
+                "With a slight bend in your elbows, open your arms wide",
+                "Bring the dumbbells back together at the top"
+            ],
+            "instructions_ar": [
+                "استلقِ على مقعد مستوٍ والدمبلز فوق صدرك",
+                "مع ثني كوعيك قليلاً، افتح ذراعيك للجانبين",
+                "اجمع الدمبلز معاً في الأعلى"
+            ]
+        },
+        {
+            "id": "ex_preacher_curl",
+            "name_en": "Preacher curl",
+            "name_ar": "بريتشر كيرل",
+            "muscleGroup_en": "Arms",
+            "muscleGroup_ar": "الذراعين",
+            "equipment_en": "Machine",
+            "equipment_ar": "جهاز",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Hypertrophy",
+            "category_ar": "ضخامة عضلية",
+            "targetMuscles_en": [
+                "Biceps"
+            ],
+            "targetMuscles_ar": [
+                "البايسبس"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit at a preacher bench and rest your upper arms on the pad",
+                "Hold an EZ bar or dumbbells",
+                "Curl the weight up, squeezing the biceps",
+                "Lower the weight slowly until arms are almost straight"
+            ],
+            "instructions_ar": [
+                "اجلس على مقعد البريتشر وضع ذراعيك على الوسادة",
+                "أمسك بار متعرج أو دمبلز",
+                "اسحب الوزن لأعلى مع عصر البايسبس",
+                "أنزل الوزن ببطء حتى تكاد ذراعاك تستقيم"
+            ]
+        },
+        {
+            "id": "ex_pushup",
+            "name_en": "Push-up",
+            "name_ar": "ضغط",
+            "muscleGroup_en": "Chest",
+            "muscleGroup_ar": "الصدر",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Chest",
+                "Triceps",
+                "Core"
+            ],
+            "targetMuscles_ar": [
+                "الصدر",
+                "الترايسبس",
+                "عضلات البطن"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Place hands shoulder-width apart on the floor",
+                "Keep your body in a straight line",
+                "Lower yourself until your chest touches the floor",
+                "Push back up to the starting position"
+            ],
+            "instructions_ar": [
+                "ضع يديك بعرض الكتفين على الأرض",
+                "حافظ على استقامة جسمك",
+                "أنزل جسمك حتى يلامس صدرك الأرض",
+                "ادفع جسمك لأعلى للعودة لوضع البداية"
+            ]
+        },
+        {
+            "id": "ex_pullup",
+            "name_en": "Pull-up",
+            "name_ar": "عقلة",
+            "muscleGroup_en": "Back",
+            "muscleGroup_ar": "الظهر",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Lats",
+                "Biceps",
+                "Core"
+            ],
+            "targetMuscles_ar": [
+                "المجنص (الظهر الجانبي)",
+                "البايسبس",
+                "عضلات البطن"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Hang from a pull-up bar with an overhand grip",
+                "Pull your body up until your chin clears the bar",
+                "Lower yourself down with control"
+            ],
+            "instructions_ar": [
+                "تدلى من البار بقبضة علوية",
+                "اسحب جسمك لأعلى حتى يتجاوز ذقنك البار",
+                "أنزل جسمك ببطء وتحكم"
+            ]
+        },
+        {
+            "id": "ex_bodyweight_squat",
+            "name_en": "Bodyweight squat",
+            "name_ar": "سكوات بدون أوزان",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Quads",
+                "Glutes"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "الأرداف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand with feet shoulder-width apart",
+                "Push hips back and bend your knees",
+                "Lower until thighs are parallel to the floor",
+                "Stand back up"
+            ],
+            "instructions_ar": [
+                "قف بعرض الكتفين",
+                "ادفع حوضك للخلف واثنِ ركبتيك",
+                "انزل حتى تصبح فخذيك موازية للأرض",
+                "قف للوضع الأصلي"
+            ]
+        },
+        {
+            "id": "ex_lunge",
+            "name_en": "Walking lunge",
+            "name_ar": "لانج",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Quads",
+                "Glutes"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "الأرداف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Take a large step forward",
+                "Lower your hips until both knees are bent at a 90-degree angle",
+                "Push off your back foot to step forward into the next lunge"
+            ],
+            "instructions_ar": [
+                "خذ خطوة واسعة للأمام",
+                "أنزل حوضك حتى تنثني ركبتيك بزاوية 90 درجة",
+                "ادفع بقدمك الخلفية للتقدم لخطوة اللانج التالية"
+            ]
+        },
+        {
+            "id": "ex_plank",
+            "name_en": "Plank",
+            "name_ar": "بلانك",
+            "muscleGroup_en": "Core",
+            "muscleGroup_ar": "البطن والوسط",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Core",
+                "Shoulders"
+            ],
+            "targetMuscles_ar": [
+                "عضلات البطن",
+                "الكتف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Support your body on your forearms and toes",
+                "Keep your body in a straight line from head to heels",
+                "Brace your core and hold the position"
+            ],
+            "instructions_ar": [
+                "ادعم جسمك على ساعديك وأصابع قدميك",
+                "حافظ على استقامة جسمك من الرأس للكعبين",
+                "شد عضلات بطنك واثبت على هذا الوضع"
+            ]
+        },
+        {
+            "id": "ex_burpee",
+            "name_en": "Burpee",
+            "name_ar": "بيربي",
+            "muscleGroup_en": "Full Body",
+            "muscleGroup_ar": "الجسم كامل",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Full Body",
+                "Cardio"
+            ],
+            "targetMuscles_ar": [
+                "الجسم كامل",
+                "كارديو"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Drop into a squat position and place hands on the floor",
+                "Kick your feet back to a push-up position",
+                "Do a push-up (optional)",
+                "Jump your feet back to the squat position and explosively jump up"
+            ],
+            "instructions_ar": [
+                "انزل لوضع السكوات وضع يديك على الأرض",
+                "اقفز بقدميك للخلف لوضع الضغط",
+                "قم بتمرين ضغط (اختياري)",
+                "اقفز بقدميك للأمام وقفز لأعلى بقوة"
+            ]
+        },
+        {
+            "id": "ex_mountain_climber",
+            "name_en": "Mountain climber",
+            "name_ar": "تسلق الجبل",
+            "muscleGroup_en": "Core",
+            "muscleGroup_ar": "البطن والوسط",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Core",
+                "Cardio"
+            ],
+            "targetMuscles_ar": [
+                "عضلات البطن",
+                "كارديو"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Start in a push-up position",
+                "Bring one knee towards your chest",
+                "Quickly switch legs, simulating a running motion"
+            ],
+            "instructions_ar": [
+                "ابدأ من وضع تمرين الضغط",
+                "اجلب إحدى ركبتيك نحو صدرك",
+                "بدل بين قدميك بسرعة كأنك تركض في مكانك"
+            ]
+        },
+        {
+            "id": "ex_jumping_jack",
+            "name_en": "Jumping jack",
+            "name_ar": "جامبينج جاك",
+            "muscleGroup_en": "Full Body",
+            "muscleGroup_ar": "الجسم كامل",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Cardio"
+            ],
+            "targetMuscles_ar": [
+                "كارديو"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand tall with arms at your sides",
+                "Jump up and spread your legs while bringing arms overhead",
+                "Jump back to the starting position"
+            ],
+            "instructions_ar": [
+                "قف بشكل مستقيم وذراعيك بجانبك",
+                "اقفز مع فتح قدميك ورفع ذراعيك فوق رأسك",
+                "اقفز للعودة لوضع البداية"
+            ]
+        },
+        {
+            "id": "ex_treadmill",
+            "name_en": "Treadmill run",
+            "name_ar": "تريدميل",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Machine",
+            "equipment_ar": "جهاز",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Cardio",
+            "category_ar": "كارديو",
+            "targetMuscles_en": [
+                "Cardio",
+                "Legs"
+            ],
+            "targetMuscles_ar": [
+                "كارديو",
+                "الأرجل"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Step onto the treadmill and attach the safety clip",
+                "Start at a slow walking pace to warm up",
+                "Increase speed and incline to your target intensity",
+                "Cool down before stepping off"
+            ],
+            "instructions_ar": [
+                "قف على المشاية واربط مشبك الأمان",
+                "ابدأ بمشي بطيء للإحماء",
+                "قم بزيادة السرعة والميل حسب هدفك",
+                "قم بتهدئة السرعة قبل النزول"
+            ]
+        },
+        {
+            "id": "ex_box_jump",
+            "name_en": "Box jump",
+            "name_ar": "بوكس جامب",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Box",
+            "equipment_ar": "صندوق",
+            "difficulty_en": "Intermediate",
+            "difficulty_ar": "متوسط",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Legs",
+                "Explosiveness"
+            ],
+            "targetMuscles_ar": [
+                "الأرجل",
+                "قوة انفجارية"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Stand in front of a sturdy box",
+                "Dip into a quarter squat and swing your arms",
+                "Jump onto the box landing softly",
+                "Step back down"
+            ],
+            "instructions_ar": [
+                "قف أمام صندوق متين",
+                "انزل للسكوات ربع نزلة مع أرجحة ذراعيك",
+                "اقفز على الصندوق واهبط بنعومة",
+                "انزل بهدوء"
+            ]
+        },
+        {
+            "id": "ex_bicycle_crunch",
+            "name_en": "Bicycle crunch",
+            "name_ar": "كرانش دراجة",
+            "muscleGroup_en": "Core",
+            "muscleGroup_ar": "البطن والوسط",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Core",
+                "Obliques"
+            ],
+            "targetMuscles_ar": [
+                "عضلات البطن",
+                "الخواصر (البطن الجانبية)"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lie on your back with hands behind your head",
+                "Bring one knee to your chest while rotating your opposite elbow towards it",
+                "Switch sides continuously"
+            ],
+            "instructions_ar": [
+                "استلقِ على ظهرك ويداك خلف رأسك",
+                "ارفع إحدى ركبتيك لصدرك ووجه الكوع المعاكس نحوها",
+                "بدل بين الجانبين باستمرار"
+            ]
+        },
+        {
+            "id": "ex_russian_twist",
+            "name_en": "Russian twist",
+            "name_ar": "تويست روسي",
+            "muscleGroup_en": "Core",
+            "muscleGroup_ar": "البطن والوسط",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Core",
+                "Obliques"
+            ],
+            "targetMuscles_ar": [
+                "عضلات البطن",
+                "الخواصر (البطن الجانبية)"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Sit on the floor with knees bent and feet slightly lifted",
+                "Lean back slightly to engage your core",
+                "Twist your torso to touch the floor on one side, then the other"
+            ],
+            "instructions_ar": [
+                "اجلس على الأرض مع ثني الركبتين ورفع القدمين قليلاً",
+                "انحنِ للخلف قليلاً لشد عضلات البطن",
+                "لف جذعك لتلمس الأرض في جانب ثم الآخر"
+            ]
+        },
+        {
+            "id": "ex_wall_sit",
+            "name_en": "Wall sit",
+            "name_ar": "جلوس الحائط",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Quads"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Lean your back against a wall",
+                "Slide down until your knees are at a 90-degree angle",
+                "Hold the position for as long as possible"
+            ],
+            "instructions_ar": [
+                "أسند ظهرك على الحائط",
+                "انزل ببطء حتى تنثني ركبتيك بزاوية 90 درجة",
+                "اثبت على هذا الوضع لأطول فترة ممكنة"
+            ]
+        },
+        {
+            "id": "ex_step_up",
+            "name_en": "Step up",
+            "name_ar": "ستيب أب",
+            "muscleGroup_en": "Legs",
+            "muscleGroup_ar": "الأرجل",
+            "equipment_en": "Box",
+            "equipment_ar": "صندوق",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Functional & Cardio",
+            "category_ar": "لياقة عامة وكارديو",
+            "targetMuscles_en": [
+                "Quads",
+                "Glutes"
+            ],
+            "targetMuscles_ar": [
+                "الفخذ الأمامي",
+                "الأرداف"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Place one foot on a box or bench",
+                "Drive through the raised foot to lift your body up",
+                "Step back down and switch legs"
+            ],
+            "instructions_ar": [
+                "ضع إحدى قدميك على صندوق أو مقعد",
+                "ادفع بقدمك المرفوعة لرفع جسمك بالكامل",
+                "انزل للأسفل وبدل بين القدمين"
+            ]
+        },
+        {
+            "id": "ex_jump_rope",
+            "name_en": "Jump rope",
+            "name_ar": "حبل القفز",
+            "muscleGroup_en": "Full Body",
+            "muscleGroup_ar": "الجسم كامل",
+            "equipment_en": "Bodyweight",
+            "equipment_ar": "وزن الجسم",
+            "difficulty_en": "Beginner",
+            "difficulty_ar": "مبتدئ",
+            "category_en": "Cardio",
+            "category_ar": "كارديو",
+            "targetMuscles_en": [
+                "Cardio",
+                "Calves"
+            ],
+            "targetMuscles_ar": [
+                "كارديو",
+                "السمانة"
+            ],
+            "videoUrl": "PENDING",
+            "instructions_en": [
+                "Hold the handles of the jump rope",
+                "Swing the rope over your head and jump as it passes under your feet",
+                "Maintain a steady rhythm"
+            ],
+            "instructions_ar": [
+                "أمسك مقابض الحبل",
+                "أرجح الحبل فوق رأسك واقفز عندما يمر تحت قدميك",
+                "حافظ على إيقاع ثابت"
+            ]
+        }
+    ]
+}

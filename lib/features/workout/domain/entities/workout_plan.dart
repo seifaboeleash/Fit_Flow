@@ -1,3 +1,10 @@
+import 'package:intl/intl.dart';
+
+String _getLocalized(Map<String, dynamic> json, String keyEn, String keyAr) {
+  final isArabic = Intl.getCurrentLocale().contains('ar');
+  return json[isArabic ? keyAr : keyEn] ?? json[keyEn] ?? '';
+}
+
 class WorkoutPlan {
   final String id;
   final String name;
@@ -19,22 +26,22 @@ class WorkoutPlan {
 
   Map<String, dynamic> toJson() => {
         'id': id,
-        'name': name,
-        'goal': goal,
-        'daysPerWeek': daysPerWeek,
+        'plan_name_en': name,
+        'goal_id': goal,
+        'days_per_week': daysPerWeek,
         'level': level,
-        'description': description,
+        'description_en': description,
         'days': days.map((e) => e.toJson()).toList(),
       };
 
-  factory WorkoutPlan.fromJson(Map<String, dynamic> json) => WorkoutPlan(
-        id: json['id'],
-        name: json['name'],
-        goal: json['goal'],
-        daysPerWeek: json['daysPerWeek'],
-        level: json['level'],
-        description: json['description'],
-        days: (json['days'] as List).map((e) => WorkoutDay.fromJson(e)).toList(),
+  factory WorkoutPlan.fromJson(Map<String, dynamic> json, {List<WorkoutDay> days = const []}) => WorkoutPlan(
+        id: json['id'] ?? '',
+        name: _getLocalized(json, 'plan_name_en', 'plan_name_ar'),
+        goal: json['goal_id'] ?? json['goal'] ?? '',
+        daysPerWeek: json['days_per_week'] ?? json['daysPerWeek'] ?? 0,
+        level: json['level'] ?? '',
+        description: _getLocalized(json, 'description_en', 'description_ar'),
+        days: days.isNotEmpty ? days : (json['workouts'] as List?)?.map((e) => WorkoutDay.fromJson(e)).toList() ?? [],
       );
 }
 
@@ -52,17 +59,17 @@ class WorkoutDay {
   });
 
   Map<String, dynamic> toJson() => {
-        'dayNumber': dayNumber,
+        'day_number': dayNumber,
         'name': name,
-        'focus': focus,
+        'focus_en': focus,
         'exercises': exercises.map((e) => e.toJson()).toList(),
       };
 
-  factory WorkoutDay.fromJson(Map<String, dynamic> json) => WorkoutDay(
-        dayNumber: json['dayNumber'],
-        name: json['name'],
-        focus: json['focus'],
-        exercises: (json['exercises'] as List).map((e) => DayExercise.fromJson(e)).toList(),
+  factory WorkoutDay.fromJson(Map<String, dynamic> json, {List<DayExercise> exercises = const []}) => WorkoutDay(
+        dayNumber: json['day_number'] ?? json['dayNumber'] ?? 0,
+        name: json['name'] ?? '',
+        focus: _getLocalized(json, 'focus_en', 'focus_ar'),
+        exercises: exercises.isNotEmpty ? exercises : (json['exercises'] as List?)?.map((e) => DayExercise.fromJson(e)).toList() ?? [],
       );
 }
 
@@ -71,7 +78,7 @@ class DayExercise {
   final int order;
   final int sets;
   final String reps;
-  final int restSeconds;
+  final String restTime;
   final String? notes;
   final Exercise? exerciseDetails;
 
@@ -80,7 +87,7 @@ class DayExercise {
     required this.order,
     required this.sets,
     required this.reps,
-    required this.restSeconds,
+    required this.restTime,
     this.notes,
     this.exerciseDetails,
   });
@@ -90,7 +97,7 @@ class DayExercise {
     int? order,
     int? sets,
     String? reps,
-    int? restSeconds,
+    String? restTime,
     String? notes,
     Exercise? exerciseDetails,
   }) {
@@ -99,30 +106,30 @@ class DayExercise {
       order: order ?? this.order,
       sets: sets ?? this.sets,
       reps: reps ?? this.reps,
-      restSeconds: restSeconds ?? this.restSeconds,
+      restTime: restTime ?? this.restTime,
       notes: notes ?? this.notes,
       exerciseDetails: exerciseDetails ?? this.exerciseDetails,
     );
   }
 
   Map<String, dynamic> toJson() => {
-        'exerciseId': exerciseId,
+        'exercise_id': exerciseId,
         'order': order,
         'sets': sets,
-        'reps': reps,
-        'restSeconds': restSeconds,
+        'reps_en': reps,
+        'rest_time_en': restTime,
         'notes': notes,
         'exerciseDetails': exerciseDetails?.toJson(),
       };
 
-  factory DayExercise.fromJson(Map<String, dynamic> json) => DayExercise(
-        exerciseId: json['exerciseId'],
-        order: json['order'],
-        sets: json['sets'],
-        reps: json['reps'],
-        restSeconds: json['restSeconds'],
+  factory DayExercise.fromJson(Map<String, dynamic> json, {Exercise? exerciseDetails}) => DayExercise(
+        exerciseId: json['exercise_id'] ?? json['exerciseId'] ?? '',
+        order: json['order'] ?? 0,
+        sets: json['sets'] ?? 0,
+        reps: _getLocalized(json, 'reps_en', 'reps_ar'),
+        restTime: _getLocalized(json, 'rest_time_en', 'rest_time_ar'),
         notes: json['notes'],
-        exerciseDetails: json['exerciseDetails'] != null ? Exercise.fromJson(json['exerciseDetails']) : null,
+        exerciseDetails: exerciseDetails ?? (json['exerciseDetails'] != null ? Exercise.fromJson(json['exerciseDetails']) : null),
       );
 }
 
@@ -151,25 +158,28 @@ class Exercise {
 
   Map<String, dynamic> toJson() => {
         'id': id,
-        'name': name,
-        'muscleGroup': muscleGroup,
-        'equipment': equipment,
+        'name_en': name,
+        'muscleGroup_en': muscleGroup,
+        'equipment_en': equipment,
         'difficulty': difficulty,
         'gifUrl': gifUrl,
-        'instructions': instructions,
-        'category': category,
-        'targetMuscles': targetMuscles,
+        'instructions_en': instructions,
+        'category_en': category,
+        'targetMuscles_en': targetMuscles,
       };
 
-  factory Exercise.fromJson(Map<String, dynamic> json) => Exercise(
-        id: json['id'],
-        name: json['name'],
-        muscleGroup: json['muscleGroup'],
-        equipment: json['equipment'],
-        difficulty: json['difficulty'],
-        gifUrl: json['gifUrl'],
-        instructions: List<String>.from(json['instructions']),
-        category: json['category'],
-        targetMuscles: List<String>.from(json['targetMuscles']),
-      );
+  factory Exercise.fromJson(Map<String, dynamic> json) {
+    final isArabic = Intl.getCurrentLocale().contains('ar');
+    return Exercise(
+      id: json['id'] ?? '',
+      name: _getLocalized(json, 'name_en', 'name_ar'),
+      muscleGroup: _getLocalized(json, 'muscleGroup_en', 'muscleGroup_ar'),
+      equipment: _getLocalized(json, 'equipment_en', 'equipment_ar'),
+      difficulty: json['difficulty'] ?? '',
+      gifUrl: json['gifUrl'] ?? '',
+      instructions: List<String>.from(json[isArabic ? 'instructions_ar' : 'instructions_en'] ?? json['instructions_en'] ?? []),
+      category: _getLocalized(json, 'category_en', 'category_ar'),
+      targetMuscles: List<String>.from(json[isArabic ? 'targetMuscles_ar' : 'targetMuscles_en'] ?? json['targetMuscles_en'] ?? []),
+    );
+  }
 }

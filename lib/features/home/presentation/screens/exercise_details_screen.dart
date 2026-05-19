@@ -69,7 +69,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                       SizedBox(width: 12.w),
                       Expanded(child: _buildStatCard('REPS', dayExercise.reps)),
                       SizedBox(width: 12.w),
-                      Expanded(child: _buildStatCard('REST', '${dayExercise.restSeconds}s')),
+                      Expanded(child: _buildStatCard('REST', dayExercise.restTime)),
                     ],
                   ),
                   SizedBox(height: 32.h),

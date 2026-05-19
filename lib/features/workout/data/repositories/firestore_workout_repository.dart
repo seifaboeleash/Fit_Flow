@@ -22,29 +22,30 @@ class FirestoreWorkoutRepository implements WorkoutRepository {
       }
 
       final planData = planDoc.data()!;
+      planData['id'] = planDoc.id;
 
-      // 2. Fetch .collection('workout_days').orderBy('dayNumber') -> list of days
+      // 2. Fetch .collection('workout_days')
       final daysSnapshot = await planDoc.reference
           .collection('workout_days')
-          .orderBy('dayNumber')
-          .get();
+          .orderBy('day_number')
+          .get()
+          .catchError((_) => planDoc.reference.collection('workout_days').get());
 
       List<WorkoutDay> workoutDays = [];
 
       for (var dayDoc in daysSnapshot.docs) {
         final dayData = dayDoc.data();
 
-        // 3. For each day: .collection('day_exercises').orderBy('order') -> exercises
+        // 3. For each day: .collection('day_exercises')
         final exercisesSnapshot = await dayDoc.reference
             .collection('day_exercises')
-            .orderBy('order')
             .get();
 
         List<DayExercise> dayExercises = [];
 
         for (var exerciseDoc in exercisesSnapshot.docs) {
           final exData = exerciseDoc.data();
-          final exerciseId = exData['exerciseId'] as String;
+          final exerciseId = exData['exercise_id'] ?? exData['exerciseId'] as String;
 
           // 4. For each exercise: exercises/{exerciseId} -> exercise details
           final exerciseDetailsDoc =
@@ -53,48 +54,18 @@ class FirestoreWorkoutRepository implements WorkoutRepository {
 
           if (exerciseDetailsDoc.exists) {
             final detailsData = exerciseDetailsDoc.data()!;
-            exerciseDetails = Exercise(
-              id: exerciseDetailsDoc.id,
-              name: detailsData['name'] ?? '',
-              muscleGroup: detailsData['muscleGroup'] ?? '',
-              equipment: detailsData['equipment'] ?? '',
-              difficulty: detailsData['difficulty'] ?? '',
-              gifUrl: detailsData['gifUrl'] ?? '',
-              instructions: List<String>.from(detailsData['instructions'] ?? []),
-              category: detailsData['category'] ?? '',
-              targetMuscles: List<String>.from(detailsData['targetMuscles'] ?? []),
-            );
+            detailsData['id'] = exerciseDetailsDoc.id;
+            exerciseDetails = Exercise.fromJson(detailsData);
           }
 
-          dayExercises.add(DayExercise(
-            exerciseId: exerciseId,
-            order: exData['order'] as int? ?? 0,
-            sets: exData['sets'] as int? ?? 0,
-            reps: exData['reps'] as String? ?? '',
-            restSeconds: exData['restSeconds'] as int? ?? 0,
-            notes: exData['notes'] as String?,
-            exerciseDetails: exerciseDetails,
-          ));
+          dayExercises.add(DayExercise.fromJson(exData, exerciseDetails: exerciseDetails));
         }
 
-        workoutDays.add(WorkoutDay(
-          dayNumber: dayData['dayNumber'] as int? ?? 0,
-          name: dayData['name'] as String? ?? '',
-          focus: dayData['focus'] as String? ?? '',
-          exercises: dayExercises,
-        ));
+        workoutDays.add(WorkoutDay.fromJson(dayData, exercises: dayExercises));
       }
 
       // 5. Assemble and return WorkoutPlan
-      return WorkoutPlan(
-        id: planDoc.id,
-        name: planData['name'] as String? ?? '',
-        goal: planData['goal'] as String? ?? '',
-        daysPerWeek: planData['daysPerWeek'] as int? ?? 0,
-        level: planData['level'] as String? ?? '',
-        description: planData['description'] as String? ?? '',
-        days: workoutDays,
-      );
+      return WorkoutPlan.fromJson(planData, days: workoutDays);
     } catch (e) {
       throw Exception('Failed to fetch workout plan: $e');
     }

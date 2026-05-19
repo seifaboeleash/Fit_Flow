@@ -16,7 +16,7 @@ Future<void> runMain(EnvType envType) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setupGetIt(envType);
-  await FirestoreSeeder().seed();
+  // await FirestoreSeeder().seedAll();
   runApp(const MyApp());
 }
 
