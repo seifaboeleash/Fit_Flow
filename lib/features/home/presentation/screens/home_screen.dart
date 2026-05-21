@@ -10,6 +10,9 @@ import '../widgets/dashboard_stat_card.dart';
 import '../widgets/exercise_list_tile.dart';
 import '../widgets/weekly_date_strip.dart';
 import 'package:fit_flow/generated/l10n.dart';
+import 'package:hive/hive.dart';
+import '../../../../core/models/plan.dart';
+import '../../domain/entities/active_plan.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,7 +61,22 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(height: 16.h),
                       WeeklyDateStrip(weekDays: data.weekDays),
                       SizedBox(height: 24.h),
-                      ActivePlanCard(plan: data.activePlan),
+                      Builder(
+                        builder: (context) {
+                          final Plan? hivePlan = Hive.box<Plan>('plan_box').get('active_plan');
+                          final activePlanToDisplay = hivePlan != null
+                              ? ActivePlan(
+                                  title: hivePlan.name,
+                                  durationMinutes: hivePlan.days.isNotEmpty && hivePlan.days.first.exercises.isNotEmpty
+                                      ? hivePlan.days.first.exercises.map((e) => e.durationMinutes).fold(0, (a, b) => a + b)
+                                      : 45,
+                                  exerciseCount: hivePlan.days.isNotEmpty ? hivePlan.days.first.exercises.length : 0,
+                                )
+                              : data.activePlan;
+
+                          return ActivePlanCard(plan: activePlanToDisplay);
+                        },
+                      ),
                       SizedBox(height: 32.h),
                       Text(S.of(context).homeTodaysExercises,
                           style: Styles.textStyle18),
@@ -111,7 +129,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Good Morning',
+              S.of(context).homeGoodMorning,
               style: Styles.textStyle20.copyWith(color: AppColors.primaryColor),
             ),
             SizedBox(height: 4.h),

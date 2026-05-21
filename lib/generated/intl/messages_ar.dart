@@ -20,32 +20,70 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(count) =>
+      "${Intl.plural(count, zero: '0 أيام', one: 'يوم واحد', two: 'يومان', few: '${count} أيام', many: '${count} يوماً', other: '${count} يوم')}";
+
+  static String m1(count) =>
+      "${Intl.plural(count, zero: '0 تمرين', one: 'تمرين واحد', two: 'تمرينان', few: '${count} تمارين', many: '${count} تمريناً', other: '${count} تمرين')}";
+
+  static String m2(count) =>
+      "${Intl.plural(count, zero: '0 دقيقة', one: 'دقيقة واحدة', two: 'دقيقتان', few: '${count} دقائق', many: '${count} دقيقة', other: '${count} دقيقة')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "appTitle": MessageLookupByLibrary.simpleMessage("فيت فلو"),
-    "changeLaterProfile": MessageLookupByLibrary.simpleMessage(""),
-    "continueButton": MessageLookupByLibrary.simpleMessage(""),
-    "exerciseInstructions": MessageLookupByLibrary.simpleMessage(""),
-    "goalBuildMuscle": MessageLookupByLibrary.simpleMessage(""),
-    "goalBuildMuscleDesc": MessageLookupByLibrary.simpleMessage(""),
-    "goalGeneralFitness": MessageLookupByLibrary.simpleMessage(""),
-    "goalGeneralFitnessDesc": MessageLookupByLibrary.simpleMessage(""),
-    "goalGetStrong": MessageLookupByLibrary.simpleMessage(""),
-    "goalGetStrongDesc": MessageLookupByLibrary.simpleMessage(""),
-    "homeLetsGetToWork": MessageLookupByLibrary.simpleMessage(""),
-    "homeRecovery": MessageLookupByLibrary.simpleMessage(""),
-    "homeRecoveryDesc": MessageLookupByLibrary.simpleMessage(""),
-    "homeTodaysExercises": MessageLookupByLibrary.simpleMessage(""),
-    "homeWeek1": MessageLookupByLibrary.simpleMessage(""),
-    "homeWeeklyBlueprint": MessageLookupByLibrary.simpleMessage(""),
-    "homeWeeklyBurn": MessageLookupByLibrary.simpleMessage(""),
-    "homeWeeklyBurnDesc": MessageLookupByLibrary.simpleMessage(""),
-    "navHome": MessageLookupByLibrary.simpleMessage(""),
-    "navLearn": MessageLookupByLibrary.simpleMessage(""),
-    "navProfile": MessageLookupByLibrary.simpleMessage(""),
-    "onboardingDesc": MessageLookupByLibrary.simpleMessage(""),
-    "onboardingSubtitle": MessageLookupByLibrary.simpleMessage(""),
-    "onboardingTitle": MessageLookupByLibrary.simpleMessage(""),
-    "weeklyAvailability": MessageLookupByLibrary.simpleMessage(""),
-  };
+        "activePlanTitle":
+            MessageLookupByLibrary.simpleMessage("الخطة الحالية"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("فيت فلو"),
+        "changeLaterProfile": MessageLookupByLibrary.simpleMessage(
+            "يمكنك تغيير هذا لاحقًا في الملف الشخصي"),
+        "continueButton": MessageLookupByLibrary.simpleMessage("متابعة"),
+        "daysCount": m0,
+        "exerciseInstructions":
+            MessageLookupByLibrary.simpleMessage("التعليمات"),
+        "exerciseReps": MessageLookupByLibrary.simpleMessage("تكرارات"),
+        "exerciseRest": MessageLookupByLibrary.simpleMessage("راحة"),
+        "exerciseSets": MessageLookupByLibrary.simpleMessage("مجموعات"),
+        "exercisesCount": m1,
+        "fivePlusDays": MessageLookupByLibrary.simpleMessage("5+ أيام"),
+        "goalBuildMuscle": MessageLookupByLibrary.simpleMessage("بناء العضلات"),
+        "goalBuildMuscleDesc": MessageLookupByLibrary.simpleMessage(
+            "التركيز على تضخيم العضلات والقوة."),
+        "goalGeneralFitness":
+            MessageLookupByLibrary.simpleMessage("اللياقة العامة"),
+        "goalGeneralFitnessDesc":
+            MessageLookupByLibrary.simpleMessage("صحة متوازنة وحركة."),
+        "goalGetStrong": MessageLookupByLibrary.simpleMessage("زيادة القوة"),
+        "goalGetStrongDesc": MessageLookupByLibrary.simpleMessage(
+            "إعطاء الأولوية لرفع الأثقال."),
+        "homeGoodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير"),
+        "homeLetsGetToWork":
+            MessageLookupByLibrary.simpleMessage("لنبدأ العمل."),
+        "homeRecovery": MessageLookupByLibrary.simpleMessage("الاستشفاء"),
+        "homeRecoveryDesc": MessageLookupByLibrary.simpleMessage(
+            "الحالة المثلى للتدريب اليوم."),
+        "homeTodaysExercises":
+            MessageLookupByLibrary.simpleMessage("تمارين اليوم"),
+        "homeWeek1": MessageLookupByLibrary.simpleMessage("الأسبوع الأول"),
+        "homeWeeklyBlueprint":
+            MessageLookupByLibrary.simpleMessage("مخطط الأسبوع"),
+        "homeWeeklyBurn":
+            MessageLookupByLibrary.simpleMessage("الحرق الأسبوعي"),
+        "homeWeeklyBurnDesc": MessageLookupByLibrary.simpleMessage(
+            "السعرات الحرارية المحروقة هذا الأسبوع."),
+        "minutesCount": m2,
+        "navHome": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "navLearn": MessageLookupByLibrary.simpleMessage("التعلم"),
+        "navProfile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "notAvailable": MessageLookupByLibrary.simpleMessage("غير متوفر"),
+        "onboardingDesc":
+            MessageLookupByLibrary.simpleMessage("قم بتخصيص رحلتك لأداء دقيق."),
+        "onboardingSubtitle":
+            MessageLookupByLibrary.simpleMessage("يرجى تحديد هدفك وتوفرك"),
+        "onboardingTitle": MessageLookupByLibrary.simpleMessage("اختر هدفك"),
+        "startWorkout": MessageLookupByLibrary.simpleMessage("ابدأ التمرين"),
+        "unknownExercise":
+            MessageLookupByLibrary.simpleMessage("تمرين غير معروف"),
+        "weeklyAvailability":
+            MessageLookupByLibrary.simpleMessage("التوفر الأسبوعي")
+      };
 }

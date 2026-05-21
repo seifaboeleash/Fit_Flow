@@ -4,6 +4,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/shared/custom_button.dart';
 import '../../domain/entities/active_plan.dart';
+import 'package:fit_flow/generated/l10n.dart';
 
 class ActivePlanCard extends StatelessWidget {
   final ActivePlan plan;
@@ -35,7 +36,7 @@ class ActivePlanCard extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               Text(
-                'ACTIVE PLAN',
+                S.of(context).activePlanTitle,
                 style: Styles.textStyle12.copyWith(
                   color: AppColors.primaryColor,
                   fontWeight: FontWeight.w700,
@@ -52,7 +53,7 @@ class ActivePlanCard extends StatelessWidget {
               Icon(Icons.schedule, color: AppColors.grey, size: 16.sp),
               SizedBox(width: 4.w),
               Text(
-                '${plan.durationMinutes} Minutes',
+                S.of(context).minutesCount(plan.durationMinutes),
                 style: Styles.textStyle14,
               ),
               SizedBox(width: 16.w),
@@ -63,14 +64,14 @@ class ActivePlanCard extends StatelessWidget {
               ),
               SizedBox(width: 4.w),
               Text(
-                '${plan.exerciseCount} Exercises',
+                S.of(context).exercisesCount(plan.exerciseCount),
                 style: Styles.textStyle14,
               ),
             ],
           ),
           SizedBox(height: 20.h),
           CustomButton(
-            text: 'Start Workout',
+            text: S.of(context).startWorkout,
             sufix: Icon(Icons.play_arrow, color: AppColors.white),
             color: AppColors.primaryColor,
             textColor: AppColors.white,

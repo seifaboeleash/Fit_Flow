@@ -1,4 +1,4 @@
-import 'package:intl/intl.dart';
+
 class Goal {
   final String id;
   final String titleEn;
@@ -13,9 +13,6 @@ class Goal {
     required this.subtitleEn,
     required this.subtitleAr,
   });
-
-  String get title => Intl.getCurrentLocale().contains('ar') ? titleAr : titleEn;
-  String get subtitle => Intl.getCurrentLocale().contains('ar') ? subtitleAr : subtitleEn;
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -55,9 +52,6 @@ class WorkoutPlan {
     required this.days,
   });
 
-  String get name => Intl.getCurrentLocale().contains('ar') ? planNameAr : planNameEn;
-  String get description => Intl.getCurrentLocale().contains('ar') ? descriptionAr : descriptionEn;
-
   Map<String, dynamic> toJson() => {
         'id': id,
         'goal_id': goalId,
@@ -93,10 +87,6 @@ class WorkoutDay {
     required this.focusAr,
     required this.exercises,
   });
-
-  String get focus => Intl.getCurrentLocale().contains('ar') ? focusAr : focusEn;
-  // Fallback for some previous code trying to use name
-  String get name => 'Day $dayNumber - $focus'; 
 
   Map<String, dynamic> toJson() => {
         'day_number': dayNumber,
@@ -135,9 +125,6 @@ class DayExercise {
     required this.restTimeAr,
     this.exerciseDetails,
   });
-
-  String get reps => Intl.getCurrentLocale().contains('ar') ? repsAr : repsEn;
-  String get restTime => Intl.getCurrentLocale().contains('ar') ? restTimeAr : restTimeEn;
 
   DayExercise copyWith({
     String? exerciseId,
@@ -224,14 +211,6 @@ class Exercise {
     required this.instructionsEn,
     required this.instructionsAr,
   });
-
-  String get name => Intl.getCurrentLocale().contains('ar') ? nameAr : nameEn;
-  String get muscleGroup => Intl.getCurrentLocale().contains('ar') ? muscleGroupAr : muscleGroupEn;
-  String get equipment => Intl.getCurrentLocale().contains('ar') ? equipmentAr : equipmentEn;
-  String get difficulty => Intl.getCurrentLocale().contains('ar') ? difficultyAr : difficultyEn;
-  String get category => Intl.getCurrentLocale().contains('ar') ? categoryAr : categoryEn;
-  List<String> get targetMuscles => Intl.getCurrentLocale().contains('ar') ? targetMusclesAr : targetMusclesEn;
-  List<String> get instructions => Intl.getCurrentLocale().contains('ar') ? instructionsAr : instructionsEn;
 
   Map<String, dynamic> toJson() => {
         'id': id,

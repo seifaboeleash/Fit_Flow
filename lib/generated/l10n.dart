@@ -18,10 +18,8 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -43,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -66,7 +62,12 @@ class S {
 
   /// `Continue`
   String get continueButton {
-    return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
+    return Intl.message(
+      'Continue',
+      name: 'continueButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Please select your goal and availability`
@@ -141,17 +142,32 @@ class S {
 
   /// `Home`
   String get navHome {
-    return Intl.message('Home', name: 'navHome', desc: '', args: []);
+    return Intl.message(
+      'Home',
+      name: 'navHome',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Learn`
   String get navLearn {
-    return Intl.message('Learn', name: 'navLearn', desc: '', args: []);
+    return Intl.message(
+      'Learn',
+      name: 'navLearn',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Profile`
   String get navProfile {
-    return Intl.message('Profile', name: 'navProfile', desc: '', args: []);
+    return Intl.message(
+      'Profile',
+      name: 'navProfile',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Weekly Blueprint`
@@ -186,7 +202,12 @@ class S {
 
   /// `Recovery`
   String get homeRecovery {
-    return Intl.message('Recovery', name: 'homeRecovery', desc: '', args: []);
+    return Intl.message(
+      'Recovery',
+      name: 'homeRecovery',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Optimal status for training today.`
@@ -221,7 +242,12 @@ class S {
 
   /// `Week 1`
   String get homeWeek1 {
-    return Intl.message('Week 1', name: 'homeWeek1', desc: '', args: []);
+    return Intl.message(
+      'Week 1',
+      name: 'homeWeek1',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Instructions`
@@ -269,6 +295,132 @@ class S {
     return Intl.message(
       'YOU CAN CHANGE THIS LATER IN PROFILE',
       name: 'changeLaterProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good Morning`
+  String get homeGoodMorning {
+    return Intl.message(
+      'Good Morning',
+      name: 'homeGoodMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ACTIVE PLAN`
+  String get activePlanTitle {
+    return Intl.message(
+      'ACTIVE PLAN',
+      name: 'activePlanTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Workout`
+  String get startWorkout {
+    return Intl.message(
+      'Start Workout',
+      name: 'startWorkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SETS`
+  String get exerciseSets {
+    return Intl.message(
+      'SETS',
+      name: 'exerciseSets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `REPS`
+  String get exerciseReps {
+    return Intl.message(
+      'REPS',
+      name: 'exerciseReps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `REST`
+  String get exerciseRest {
+    return Intl.message(
+      'REST',
+      name: 'exerciseRest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown Exercise`
+  String get unknownExercise {
+    return Intl.message(
+      'Unknown Exercise',
+      name: 'unknownExercise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `N/A`
+  String get notAvailable {
+    return Intl.message(
+      'N/A',
+      name: 'notAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 Minute} other{{count} Minutes}}`
+  String minutesCount(int count) {
+    return Intl.plural(
+      count,
+      one: '1 Minute',
+      other: '$count Minutes',
+      name: 'minutesCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =1{1 Exercise} other{{count} Exercises}}`
+  String exercisesCount(int count) {
+    return Intl.plural(
+      count,
+      one: '1 Exercise',
+      other: '$count Exercises',
+      name: 'exercisesCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =1{1 Day} other{{count} Days}}`
+  String daysCount(int count) {
+    return Intl.plural(
+      count,
+      one: '1 Day',
+      other: '$count Days',
+      name: 'daysCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `5+ Days`
+  String get fivePlusDays {
+    return Intl.message(
+      '5+ Days',
+      name: 'fivePlusDays',
       desc: '',
       args: [],
     );

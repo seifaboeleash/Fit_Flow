@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+
 import 'package:fit_flow/core/localization/locale_cubit.dart';
 import 'package:fit_flow/config/app_config.dart';
 import 'package:fit_flow/features/home/data/repositories/firebase_home_repository.dart';
@@ -15,11 +16,6 @@ final getIt = GetIt.instance;
 Future<void> setupGetIt(EnvType envType) async {
   getIt.registerLazySingleton<AppConfig>(() => AppConfig.fromEnv(envType));
 
-  // In-memory preferences map to replace Hive temporarily
-  getIt.registerLazySingleton<Map<String, dynamic>>(
-    () => <String, dynamic>{},
-    instanceName: 'userPrefs',
-  );
 
   // Firestore
   getIt.registerLazySingleton<WorkoutRepository>(
@@ -30,19 +26,15 @@ Future<void> setupGetIt(EnvType envType) async {
   getIt.registerLazySingleton<HomeRepository>(
     () => FirebaseHomeRepository(
       workoutRepository: getIt<WorkoutRepository>(),
-      prefsBox: getIt<Map<String, dynamic>>(instanceName: 'userPrefs'),
     ),
   );
 
   getIt.registerLazySingleton<OnBoardingRepository>(
-    () => FirebaseOnBoardingRepository(
-      prefsBox: getIt<Map<String, dynamic>>(instanceName: 'userPrefs'),
-    ),
+    () => FirebaseOnBoardingRepository(),
   );
 
   // Cubits
-  getIt.registerFactory<LocaleCubit>(() =>
-      LocaleCubit(getIt<Map<String, dynamic>>(instanceName: 'userPrefs')));
+  getIt.registerFactory<LocaleCubit>(() => LocaleCubit());
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepository>()));
   getIt.registerFactory<OnBoardingCubit>(
       () => OnBoardingCubit(getIt<OnBoardingRepository>()));

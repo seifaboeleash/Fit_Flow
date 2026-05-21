@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fit_flow/config/app_config.dart';
 import 'package:fit_flow/core/constants/strings.dart';
 import 'package:fit_flow/core/routing/app_router.dart';
-import 'package:fit_flow/core/seeder/firestore_seeder.dart';
 import 'package:fit_flow/core/utils/di.dart';
 import 'package:fit_flow/firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +10,20 @@ import 'package:fit_flow/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fit_flow/core/localization/locale_cubit.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:fit_flow/core/models/plan.dart';
 
 Future<void> runMain(EnvType envType) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(PlanAdapter());
+  Hive.registerAdapter(PlanDayAdapter());
+  Hive.registerAdapter(PlanExerciseAdapter());
+  await Hive.openBox('prefs_box');
+  await Hive.openBox<Plan>('plan_box');
+
   await setupGetIt(envType);
   // await FirestoreSeeder().seedAll();
   runApp(const MyApp());

@@ -27,5 +27,17 @@
   "onboardingTitle": "اختر هدفك",
   "onboardingDesc": "قم بتخصيص رحلتك لأداء دقيق.",
   "weeklyAvailability": "التوفر الأسبوعي",
-  "changeLaterProfile": "يمكنك تغيير هذا لاحقًا في الملف الشخصي"
+  "changeLaterProfile": "يمكنك تغيير هذا لاحقًا في الملف الشخصي",
+  "homeGoodMorning": "صباح الخير",
+  "activePlanTitle": "الخطة الحالية",
+  "startWorkout": "ابدأ التمرين",
+  "exerciseSets": "مجموعات",
+  "exerciseReps": "تكرارات",
+  "exerciseRest": "راحة",
+  "unknownExercise": "تمرين غير معروف",
+  "notAvailable": "غير متوفر",
+  "minutesCount": "{count, plural, zero{0 دقيقة} one{دقيقة واحدة} two{دقيقتان} few{{count} دقائق} many{{count} دقيقة} other{{count} دقيقة}}",
+  "exercisesCount": "{count, plural, zero{0 تمرين} one{تمرين واحد} two{تمرينان} few{{count} تمارين} many{{count} تمريناً} other{{count} تمرين}}",
+  "daysCount": "{count, plural, zero{0 أيام} one{يوم واحد} two{يومان} few{{count} أيام} many{{count} يوماً} other{{count} يوم}}",
+  "fivePlusDays": "5+ أيام"
 }

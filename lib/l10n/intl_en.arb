@@ -27,5 +27,32 @@
   "onboardingTitle": "Select Your Goal",
   "onboardingDesc": "Customize your journey for precision performance.",
   "weeklyAvailability": "Weekly Availability",
-  "changeLaterProfile": "YOU CAN CHANGE THIS LATER IN PROFILE"
+  "changeLaterProfile": "YOU CAN CHANGE THIS LATER IN PROFILE",
+  "homeGoodMorning": "Good Morning",
+  "activePlanTitle": "ACTIVE PLAN",
+  "startWorkout": "Start Workout",
+  "exerciseSets": "SETS",
+  "exerciseReps": "REPS",
+  "exerciseRest": "REST",
+  "unknownExercise": "Unknown Exercise",
+  "notAvailable": "N/A",
+  "minutesCount": "{count, plural, =1{1 Minute} other{{count} Minutes}}",
+  "@minutesCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "exercisesCount": "{count, plural, =1{1 Exercise} other{{count} Exercises}}",
+  "@exercisesCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "daysCount": "{count, plural, =1{1 Day} other{{count} Days}}",
+  "@daysCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "fivePlusDays": "5+ Days"
 }

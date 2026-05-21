@@ -1,4 +1,7 @@
+import 'package:fit_flow/core/extensions/plan_localization_extension.dart';
+import 'package:fit_flow/core/localization/locale_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
@@ -17,6 +20,8 @@ class ExerciseDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lang = context.read<LocaleCubit>().state.languageCode;
+    
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -45,7 +50,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    exercise.name,
+                    exercise.name(lang),
                     style: TextStyle(
                       fontSize: 28.sp,
                       fontWeight: FontWeight.w800,
@@ -57,19 +62,19 @@ class ExerciseDetailsScreen extends StatelessWidget {
                     spacing: 8.w,
                     runSpacing: 8.h,
                     children: [
-                      _buildChip(exercise.muscleGroup),
-                      _buildChip(exercise.equipment),
-                      _buildChip(exercise.difficulty),
+                      _buildChip(exercise.muscleGroup(lang)),
+                      _buildChip(exercise.equipment(lang)),
+                      _buildChip(exercise.difficulty(lang)),
                     ],
                   ),
                   SizedBox(height: 24.h),
                   Row(
                     children: [
-                      Expanded(child: _buildStatCard('SETS', '${dayExercise.sets}')),
+                      Expanded(child: _buildStatCard(S.of(context).exerciseSets, '${dayExercise.sets}')),
                       SizedBox(width: 12.w),
-                      Expanded(child: _buildStatCard('REPS', dayExercise.reps)),
+                      Expanded(child: _buildStatCard(S.of(context).exerciseReps, dayExercise.reps(lang))),
                       SizedBox(width: 12.w),
-                      Expanded(child: _buildStatCard('REST', dayExercise.restTime)),
+                      Expanded(child: _buildStatCard(S.of(context).exerciseRest, dayExercise.restTime(lang))),
                     ],
                   ),
                   SizedBox(height: 32.h),
@@ -78,7 +83,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                     style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 16.h),
-                  ...exercise.instructions.asMap().entries.map((entry) {
+                  ...exercise.instructions(lang).asMap().entries.map((entry) {
                     return Padding(
                       padding: EdgeInsets.only(bottom: 12.h),
                       child: Row(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
+import 'package:fit_flow/generated/l10n.dart';
 
 class AvailabilitySelector extends StatelessWidget {
   final int selectedDays;
@@ -25,10 +26,10 @@ class AvailabilitySelector extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _buildOption(context, 2, '2 Days'),
-          _buildOption(context, 3, '3 Days'),
-          _buildOption(context, 4, '4 Days'),
-          _buildOption(context, 5, '5+ Days'),
+          _buildOption(context, 2, S.of(context).daysCount(2)),
+          _buildOption(context, 3, S.of(context).daysCount(3)),
+          _buildOption(context, 4, S.of(context).daysCount(4)),
+          _buildOption(context, 5, S.of(context).fivePlusDays),
         ],
       ),
     );

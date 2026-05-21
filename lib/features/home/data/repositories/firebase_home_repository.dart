@@ -1,11 +1,12 @@
-import '../../../../core/utils/api_result.dart';
-import '../../../workout/domain/entities/workout_plan.dart';
-import '../../../workout/domain/repositories/workout_repository.dart';
+import 'package:fit_flow/core/utils/api_result.dart';
+import 'package:fit_flow/features/home/domain/entities/dashboard_data.dart';
+import 'package:fit_flow/features/home/domain/repositories/home_repository.dart';
+import 'package:fit_flow/features/workout/domain/entities/workout_plan.dart';
+import 'package:fit_flow/features/workout/domain/repositories/workout_repository.dart';
+import 'package:hive/hive.dart';
 import '../../domain/entities/active_plan.dart';
-import '../../domain/entities/dashboard_data.dart';
 import '../../domain/entities/dashboard_stats.dart';
 import '../../domain/entities/week_day.dart';
-import '../../domain/repositories/home_repository.dart';
 
 class OnboardingIncompleteException implements Exception {
   final String message;
@@ -17,43 +18,21 @@ class OnboardingIncompleteException implements Exception {
 
 class FirebaseHomeRepository implements HomeRepository {
   final WorkoutRepository _workoutRepository;
-  final Map<String, dynamic> _prefsBox;
 
   FirebaseHomeRepository({
     required WorkoutRepository workoutRepository,
-    required Map<String, dynamic> prefsBox,
-  }) : _workoutRepository = workoutRepository,
-       _prefsBox = prefsBox;
+  }) : _workoutRepository = workoutRepository;
   
   @override
   Future<ApiResult<DashboardData>> getDashboardData() async {
     try {
-      final String? planId = _prefsBox['activePlanId'];
-      if (planId == null) {
+      final bool isOnboardingDone = Hive.box('prefs_box').get('isOnboardingDone', defaultValue: false);
+      if (!isOnboardingDone) {
         throw OnboardingIncompleteException();
       }
 
-      int currentDayIndex = _prefsBox['currentDay'] ?? 1;
-
-      WorkoutPlan plan = await _workoutRepository.getPlanById(planId);
-
-      // Map to DashboardData
-      // Find today's workout
-      WorkoutDay? todayWorkout;
-      try {
-        todayWorkout = plan.days.firstWhere(
-          (d) => d.dayNumber == currentDayIndex,
-        );
-      } catch (_) {
-        if (plan.days.isNotEmpty) {
-          todayWorkout = plan.days.first;
-        }
-      }
-
+      // User requested keeping DashboardData fetch for stats and weekdays for the next task
       List<DayExercise> todayExercises = [];
-      if (todayWorkout != null) {
-        todayExercises = todayWorkout.exercises;
-      }
 
       // Generate WeekDays starting from today or standard Sun-Sat?
       // Since it's dynamic, let's just create 7 days based on current date
@@ -71,12 +50,10 @@ class FirebaseHomeRepository implements HomeRepository {
       }
 
       final data = DashboardData(
-        activePlan: ActivePlan(
-          title: plan.name,
-          durationMinutes: todayWorkout != null
-              ? todayWorkout.exercises.length * 10
-              : 45, // Rough estimate
-          exerciseCount: todayExercises.length,
+        activePlan: const ActivePlan(
+          title: 'Your Plan',
+          durationMinutes: 45,
+          exerciseCount: 0,
         ),
         stats: const DashboardStats(recoveryPercentage: 100, weeklyBurn: 0),
         weekDays: weekDays,

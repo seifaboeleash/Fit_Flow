@@ -1,43 +1,31 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../domain/repositories/on_boarding_repository.dart';
 import '../../../workout/domain/entities/workout_plan.dart';
+import 'package:hive/hive.dart';
 
 class FirebaseOnBoardingRepository implements OnBoardingRepository {
   final FirebaseFirestore _firestore;
-  final Map<String, dynamic> _prefsBox;
 
   FirebaseOnBoardingRepository({
     FirebaseFirestore? firestore,
-    required Map<String, dynamic> prefsBox,
-  })  : _firestore = firestore ?? FirebaseFirestore.instance,
-        _prefsBox = prefsBox;
+  })  : _firestore = firestore ?? FirebaseFirestore.instance;
 
   @override
   Future<void> savePreferences({
     required String goal,
     required int daysPerWeek,
   }) async {
-    final String activePlanId = '${goal}_${daysPerWeek}days';
-
-    _prefsBox['goal'] = goal;
-    _prefsBox['daysPerWeek'] = daysPerWeek;
-    _prefsBox['activePlanId'] = activePlanId;
-    _prefsBox['currentWeek'] = 1;
-    _prefsBox['currentDay'] = 1;
+    await Hive.box('prefs_box').put('isOnboardingDone', true);
   }
 
   @override
   Future<bool> hasCompletedOnboarding() async {
-    return _prefsBox.containsKey('activePlanId');
+    return Hive.box('prefs_box').get('isOnboardingDone', defaultValue: false);
   }
 
   @override
   Future<Map<String, dynamic>?> getPreferences() async {
-    if (_prefsBox.isEmpty) {
-      return null;
-    }
-
-    return Map.from(_prefsBox);
+    return null;
   }
 
   @override
