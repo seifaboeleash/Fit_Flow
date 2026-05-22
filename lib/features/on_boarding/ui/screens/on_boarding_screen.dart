@@ -27,7 +27,7 @@ class OnBoardingScreen extends StatelessWidget {
           backgroundColor: AppColors.backgroundColor,
           body: SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
               child: Column(
                 children: [
                   OnBoardingHeader(),

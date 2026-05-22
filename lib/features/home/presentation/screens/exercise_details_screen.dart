@@ -8,8 +8,6 @@ import '../../../../core/theme/styles.dart';
 import '../../../workout/domain/entities/workout_plan.dart';
 import 'package:fit_flow/generated/l10n.dart';
 import '../../../workout/presentation/cubit/exercise_cubit.dart';
-import '../../../workout/presentation/widgets/exercise_finish_button.dart';
-import '../../../workout/presentation/widgets/exercise_stat_card.dart';
 import '../../../workout/presentation/widgets/rest_timer_widget.dart';
 import '../../../workout/presentation/widgets/sets_table.dart';
 
