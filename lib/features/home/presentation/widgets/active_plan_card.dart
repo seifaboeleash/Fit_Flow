@@ -5,6 +5,7 @@ import '../../../../core/theme/styles.dart';
 import '../../../../core/shared/custom_button.dart';
 import '../../domain/entities/active_plan.dart';
 import 'package:fit_flow/generated/l10n.dart';
+import '../../../../core/extensions/plan_localization_extension.dart';
 
 class ActivePlanCard extends StatelessWidget {
   final ActivePlan plan;
@@ -46,7 +47,7 @@ class ActivePlanCard extends StatelessWidget {
             ],
           ),
           SizedBox(height: 12.h),
-          Text(plan.title, style: Styles.textStyle24),
+          Text(plan.plan.name(Localizations.localeOf(context).languageCode), style: Styles.textStyle24),
           SizedBox(height: 8.h),
           Row(
             children: [

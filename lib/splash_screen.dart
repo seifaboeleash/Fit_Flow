@@ -2,6 +2,7 @@ import 'package:fit_flow/core/constants/strings.dart';
 import 'package:fit_flow/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,15 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () async {
-      // if (mounted) {
-      //   final onBoardingRepo = getIt<OnBoardingRepository>();
-      //   final hasCompleted = await onBoardingRepo.hasCompletedOnboarding();
-      //   if (hasCompleted) {
-      //     Navigator.pushReplacementNamed(context, mainLayoutScreen);
-      //   } else {
-      //     Navigator.pushReplacementNamed(context, onBoardingScreen);
-      //   }
-      // }
+      // final isOnboardingDone =
+      //     Hive.box('prefs_box').get('isOnboardingDone', defaultValue: false);
+
+// Then navigate accordingly
+      // Navigator.pushReplacementNamed(context, isOnboardingDone ? homeScreen : onBoardingScreen);
       Navigator.pushReplacementNamed(context, onBoardingScreen);
     });
   }

@@ -15,7 +15,10 @@ class FirebaseOnBoardingRepository implements OnBoardingRepository {
     required String goal,
     required int daysPerWeek,
   }) async {
-    await Hive.box('prefs_box').put('isOnboardingDone', true);
+    final box = Hive.box('prefs_box');
+    await box.put('goalId', goal);
+    await box.put('daysPerWeek', daysPerWeek);
+    await box.put('isOnboardingDone', true);
   }
 
   @override

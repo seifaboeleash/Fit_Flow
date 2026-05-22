@@ -39,5 +39,11 @@
   "minutesCount": "{count, plural, zero{0 دقيقة} one{دقيقة واحدة} two{دقيقتان} few{{count} دقائق} many{{count} دقيقة} other{{count} دقيقة}}",
   "exercisesCount": "{count, plural, zero{0 تمرين} one{تمرين واحد} two{تمرينان} few{{count} تمارين} many{{count} تمريناً} other{{count} تمرين}}",
   "daysCount": "{count, plural, zero{0 أيام} one{يوم واحد} two{يومان} few{{count} أيام} many{{count} يوماً} other{{count} يوم}}",
-  "fivePlusDays": "5+ أيام"
+  "fivePlusDays": "5+ أيام",
+  "set": "مجموعة",
+  "kg": "كجم",
+  "reps": "تكرار",
+  "weight": "الوزن",
+  "finish": "إنهاء",
+  "startTimer": "بدء المؤقت"
 }

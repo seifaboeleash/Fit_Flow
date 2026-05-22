@@ -7,6 +7,11 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../workout/domain/entities/workout_plan.dart';
 import 'package:fit_flow/generated/l10n.dart';
+import '../../../workout/presentation/cubit/exercise_cubit.dart';
+import '../../../workout/presentation/widgets/exercise_finish_button.dart';
+import '../../../workout/presentation/widgets/exercise_stat_card.dart';
+import '../../../workout/presentation/widgets/rest_timer_widget.dart';
+import '../../../workout/presentation/widgets/sets_table.dart';
 
 class ExerciseDetailsScreen extends StatelessWidget {
   final Exercise exercise;
@@ -20,104 +25,180 @@ class ExerciseDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => ExerciseCubit()..init(dayExercise),
+      child: _ExerciseDetailsView(exercise: exercise, dayExercise: dayExercise),
+    );
+  }
+}
+
+class _ExerciseDetailsView extends StatelessWidget {
+  final Exercise exercise;
+  final DayExercise dayExercise;
+
+  const _ExerciseDetailsView({
+    required this.exercise,
+    required this.dayExercise,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     final lang = context.read<LocaleCubit>().state.languageCode;
-    
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: const BackButton(color: AppColors.textDark),
+        title: Text(
+          'Workout Session',
+          style: TextStyle(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w700,
+            color: AppColors.textDark,
+          ),
+        ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Hero(
-              tag: 'exercise_${exercise.id}',
-              child: Container(
-                width: double.infinity,
-                height: 250.h,
-                color: AppColors.grey,
-                child: exercise.videoUrl.isNotEmpty
-                    ? Image.network(exercise.videoUrl, fit: BoxFit.cover, errorBuilder: (c, e, s) => Center(child: Icon(Icons.image, size: 50.r, color: AppColors.white)))
-                    : Center(child: Icon(Icons.image, size: 50.r, color: AppColors.white)),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(20.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    exercise.name(lang),
-                    style: TextStyle(
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w800,
-                      color: AppColors.textDark,
-                    ),
+      body: BlocBuilder<ExerciseCubit, ExerciseState>(
+        builder: (context, state) {
+          if (state is ExerciseInitial) {
+            return const Center(
+                child:
+                    CircularProgressIndicator(color: AppColors.primaryColor));
+          }
+
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Hero(
+                  tag: 'exercise_${exercise.id}',
+                  child: Container(
+                    width: double.infinity,
+                    height: 220.h,
+                    //color: AppColors.grey,
+                    child: Image.asset(
+                        'assets/images/Section - Media Zone (Top 30%).png'),
                   ),
-                  SizedBox(height: 12.h),
-                  Wrap(
-                    spacing: 8.w,
-                    runSpacing: 8.h,
+                ),
+                Padding(
+                  padding: EdgeInsets.all(20.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _buildChip(exercise.muscleGroup(lang)),
-                      _buildChip(exercise.equipment(lang)),
-                      _buildChip(exercise.difficulty(lang)),
-                    ],
-                  ),
-                  SizedBox(height: 24.h),
-                  Row(
-                    children: [
-                      Expanded(child: _buildStatCard(S.of(context).exerciseSets, '${dayExercise.sets}')),
-                      SizedBox(width: 12.w),
-                      Expanded(child: _buildStatCard(S.of(context).exerciseReps, dayExercise.reps(lang))),
-                      SizedBox(width: 12.w),
-                      Expanded(child: _buildStatCard(S.of(context).exerciseRest, dayExercise.restTime(lang))),
-                    ],
-                  ),
-                  SizedBox(height: 32.h),
-                  Text(
-                    S.of(context).exerciseInstructions,
-                    style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 16.h),
-                  ...exercise.instructions(lang).asMap().entries.map((entry) {
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 12.h),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Text(
+                        exercise.name(lang),
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.textDark,
+                        ),
+                      ),
+                      SizedBox(height: 12.h),
+                      Wrap(
+                        spacing: 8.w,
+                        runSpacing: 8.h,
                         children: [
-                          Container(
-                            width: 24.w,
-                            height: 24.w,
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              shape: BoxShape.circle,
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              '${entry.key + 1}',
-                              style: TextStyle(color: AppColors.white, fontSize: 12.sp, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          SizedBox(width: 12.w),
-                          Expanded(
-                            child: Text(
-                              entry.value,
-                              style: Styles.textStyle14.copyWith(height: 1.5),
-                            ),
-                          ),
+                          _buildChip(exercise.muscleGroup(lang)),
+                          _buildChip(exercise.equipment(lang)),
+                          _buildChip(exercise.difficulty(lang)),
                         ],
                       ),
-                    );
-                  }),
-                ],
-              ),
+                      SizedBox(height: 12.h),
+
+                      Container(
+                        height: 246.h,
+                        width: 350.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.r),
+                          color: AppColors.white,
+                        ),
+                        padding: EdgeInsets.all(16.w),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 24.w,
+                                  height: 24.w,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xff004AC6),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Icon(Icons.info_outlined,
+                                      color: AppColors.white,
+                                      //color: AppColors.primaryColor,
+                                      size: 24.w),
+                                ),
+                                SizedBox(width: 8.w),
+                                Text(
+                                  S.of(context).exerciseInstructions,
+                                  style: Styles.textStyle18
+                                      .copyWith(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 16.h),
+                            ...exercise
+                                .instructions(lang)
+                                .asMap()
+                                .entries
+                                .map((entry) {
+                              return Padding(
+                                padding: EdgeInsets.only(bottom: 12.h),
+                                child: Row(
+                                  //crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 8.w,
+                                      height: 8.w,
+                                      decoration: const BoxDecoration(
+                                        color: Color(0xff004AC6),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      alignment: Alignment.center,
+                                      // child: Text(
+                                      //   '${entry.key + 1}',
+                                      //   style: TextStyle(
+                                      //       color: AppColors.white,
+                                      //       fontSize: 12.sp,
+                                      //       fontWeight: FontWeight.bold),
+                                      // ),
+                                    ),
+                                    SizedBox(width: 12.w),
+                                    Expanded(
+                                      child: Text(
+                                        entry.value,
+                                        style: Styles.textStyle14.copyWith(
+                                            height: 1.5,
+                                            color: AppColors.textDark),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }),
+                            // Sets Table
+                          ],
+                        ),
+                      ),
+                      const SetsTable(),
+
+                      // Rest Timer
+                      const RestTimerWidget(),
+
+                      // Finish Button
+                      // const ExerciseFinishButton(),
+                      SizedBox(height: 32.h),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
@@ -136,32 +217,23 @@ class ExerciseDetailsScreen extends StatelessWidget {
       ),
     );
   }
-
-  Widget _buildStatCard(String title, String value) {
-    return Container(
-      padding: EdgeInsets.all(16.w),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: AppColors.outlineGrey),
-      ),
-      child: Column(
-        children: [
-          Text(
-            value,
-            style: TextStyle(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.bold,
-              color: AppColors.primaryColor,
-            ),
-          ),
-          SizedBox(height: 4.h),
-          Text(
-            title,
-            style: Styles.textStyle10.copyWith(color: AppColors.grey),
-          ),
-        ],
-      ),
-    );
-  }
 }
+ // Row(
+                      //   children: [
+                      //     Expanded(
+                      //         child: ExerciseStatCard(
+                      //             title: S.of(context).exerciseSets,
+                      //             value: '${dayExercise.sets}')),
+                      //     SizedBox(width: 12.w),
+                      //     Expanded(
+                      //         child: ExerciseStatCard(
+                      //             title: S.of(context).exerciseReps,
+                      //             value: dayExercise.reps(lang))),
+                      //     SizedBox(width: 12.w),
+                      //     Expanded(
+                      //         child: ExerciseStatCard(
+                      //             title: S.of(context).exerciseRest,
+                      //             value: dayExercise.restTime(lang))),
+                      //   ],
+                      // ),
+                      // SizedBox(height: 24.h),

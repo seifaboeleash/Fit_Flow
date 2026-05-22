@@ -1,7 +1,7 @@
 import 'package:fit_flow/core/constants/strings.dart';
 import 'package:fit_flow/features/on_boarding/ui/screens/on_boarding_screen.dart';
 import 'package:fit_flow/features/home/presentation/screens/home_screen.dart';
-import 'package:fit_flow/features/main_layout/presentation/screens/main_layout.dart';
+import 'package:fit_flow/main_layout.dart';
 import 'package:fit_flow/splash_screen.dart';
 import 'package:flutter/material.dart';
 

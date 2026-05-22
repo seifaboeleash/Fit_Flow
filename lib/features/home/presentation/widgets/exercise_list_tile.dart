@@ -18,7 +18,7 @@ class ExerciseListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final details = exercise.exerciseDetails;
     final lang = context.read<LocaleCubit>().state.languageCode;
-    
+
     return GestureDetector(
       onTap: () {
         if (details != null) {
@@ -61,10 +61,12 @@ class ExerciseListTile extends StatelessWidget {
                 children: [
                   Text(
                     details?.name(lang) ?? S.of(context).unknownExercise,
-                    style: Styles.textStyle16.copyWith(color: AppColors.textDark),
+                    style:
+                        Styles.textStyle16.copyWith(color: AppColors.textDark),
                   ),
                   SizedBox(height: 4.h),
-                  Text(details?.muscleGroup(lang) ?? S.of(context).notAvailable, style: Styles.textStyle14),
+                  Text(details?.muscleGroup(lang) ?? S.of(context).notAvailable,
+                      style: Styles.textStyle14),
                 ],
               ),
             ),

@@ -425,6 +425,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Set`
+  String get set {
+    return Intl.message(
+      'Set',
+      name: 'set',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `kg`
+  String get kg {
+    return Intl.message(
+      'kg',
+      name: 'kg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reps`
+  String get reps {
+    return Intl.message(
+      'Reps',
+      name: 'reps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight`
+  String get weight {
+    return Intl.message(
+      'Weight',
+      name: 'weight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish`
+  String get finish {
+    return Intl.message(
+      'Finish',
+      name: 'finish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Timer`
+  String get startTimer {
+    return Intl.message(
+      'Start Timer',
+      name: 'startTimer',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -26,16 +26,28 @@ class FirebaseHomeRepository implements HomeRepository {
   @override
   Future<ApiResult<DashboardData>> getDashboardData() async {
     try {
-      final bool isOnboardingDone = Hive.box('prefs_box').get('isOnboardingDone', defaultValue: false);
+      final box = Hive.box('prefs_box');
+      final bool isOnboardingDone = box.get('isOnboardingDone', defaultValue: false);
       if (!isOnboardingDone) {
         throw OnboardingIncompleteException();
       }
 
-      // User requested keeping DashboardData fetch for stats and weekdays for the next task
-      List<DayExercise> todayExercises = [];
+      final String goalId = box.get('goalId', defaultValue: '');
+      final int daysPerWeek = box.get('daysPerWeek', defaultValue: 3);
 
-      // Generate WeekDays starting from today or standard Sun-Sat?
-      // Since it's dynamic, let's just create 7 days based on current date
+      final workoutPlan = await _workoutRepository.getPlanByGoalAndDays(goalId, daysPerWeek);
+
+      List<DayExercise> todayExercises = [];
+      if (workoutPlan.days.isNotEmpty) {
+        todayExercises = workoutPlan.days.first.exercises;
+      }
+
+      int totalMinutes = 0;
+      for (var ex in todayExercises) {
+        totalMinutes += (ex.sets * 2); // basic estimation
+      }
+      if (totalMinutes == 0) totalMinutes = 45;
+
       final now = DateTime.now();
       List<WeekDay> weekDays = [];
       for (int i = 0; i < 7; i++) {
@@ -44,16 +56,16 @@ class FirebaseHomeRepository implements HomeRepository {
           WeekDay(
             name: _getWeekDayName(d.weekday),
             date: d.day,
-            isActive: i == 0, // Mark today as active
+            isActive: i == 0,
           ),
         );
       }
 
       final data = DashboardData(
-        activePlan: const ActivePlan(
-          title: 'Your Plan',
-          durationMinutes: 45,
-          exerciseCount: 0,
+        activePlan: ActivePlan(
+          plan: workoutPlan,
+          durationMinutes: totalMinutes,
+          exerciseCount: todayExercises.length,
         ),
         stats: const DashboardStats(recoveryPercentage: 100, weeklyBurn: 0),
         weekDays: weekDays,

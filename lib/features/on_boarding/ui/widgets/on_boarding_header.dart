@@ -35,41 +35,9 @@ class OnBoardingHeader extends StatelessWidget {
             ],
           ),
         ),
-        // TextButton(
-        //   onPressed: () {
-        //     context.read<LocaleCubit>().toggleLanguage();
-        //   },
-        //   child: Text(
-        //     context.watch<LocaleCubit>().state.languageCode == 'en' ? 'عربي' : 'EN',
-        //     style: TextStyle(
-        //       color: AppColors.textDark,
-        //       fontWeight: FontWeight.bold,
-        //       fontSize: 16,
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }
-
-  // void showLanguagePopupMenu(BuildContext context) {
-  //   showMenu(
-  //     context: context,
-  //     position: RelativeRect.fromLTRB(200, 100, 0, 0),
-  //     items: [
-  //       PopupMenuItem(
-  //         child: Text('English'),
-  //         value: 'en',
-  //       ),
-  //       PopupMenuItem(
-  //         child: Text('العربية'),
-  //         value: 'ar',
-  //       ),
-  //     ],
-  //   ).then((value) {
-  //     if (value != null) {
-  //       context.read<LocaleCubit>().changeLanguage(value);
-  //     }
   void showLanguagePopupMenu(BuildContext context) {
     final LocaleCubit localeCubit = context.read<LocaleCubit>();
     showMenu(
@@ -80,26 +48,30 @@ class OnBoardingHeader extends StatelessWidget {
           : RelativeRect.fromLTRB(0, 100, 200, 0),
       items: [
         PopupMenuItem(
+          value: 'en',
           child: Text(
             'English',
             style: TextStyle(
               color: localeCubit.state.languageCode == 'en'
                   ? AppColors.primaryColor
                   : AppColors.textDark,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          value: 'en',
         ),
         PopupMenuItem(
+          value: 'ar',
           child: Text(
             'العربية',
             style: TextStyle(
               color: localeCubit.state.languageCode == 'ar'
                   ? AppColors.primaryColor
                   : AppColors.textDark,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          value: 'ar',
         ),
       ],
     ).then((value) {

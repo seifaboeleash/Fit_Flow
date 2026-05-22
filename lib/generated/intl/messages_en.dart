@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "exerciseRest": MessageLookupByLibrary.simpleMessage("REST"),
         "exerciseSets": MessageLookupByLibrary.simpleMessage("SETS"),
         "exercisesCount": m1,
+        "finish": MessageLookupByLibrary.simpleMessage("Finish"),
         "fivePlusDays": MessageLookupByLibrary.simpleMessage("5+ Days"),
         "goalBuildMuscle": MessageLookupByLibrary.simpleMessage("Build Muscle"),
         "goalBuildMuscleDesc": MessageLookupByLibrary.simpleMessage(
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeWeeklyBurn": MessageLookupByLibrary.simpleMessage("Weekly Burn"),
         "homeWeeklyBurnDesc": MessageLookupByLibrary.simpleMessage(
             "Active kcal burned this week."),
+        "kg": MessageLookupByLibrary.simpleMessage("kg"),
         "minutesCount": m2,
         "navHome": MessageLookupByLibrary.simpleMessage("Home"),
         "navLearn": MessageLookupByLibrary.simpleMessage("Learn"),
@@ -79,10 +81,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please select your goal and availability"),
         "onboardingTitle":
             MessageLookupByLibrary.simpleMessage("Select Your Goal"),
+        "reps": MessageLookupByLibrary.simpleMessage("Reps"),
+        "set": MessageLookupByLibrary.simpleMessage("Set"),
+        "startTimer": MessageLookupByLibrary.simpleMessage("Start Timer"),
         "startWorkout": MessageLookupByLibrary.simpleMessage("Start Workout"),
         "unknownExercise":
             MessageLookupByLibrary.simpleMessage("Unknown Exercise"),
         "weeklyAvailability":
-            MessageLookupByLibrary.simpleMessage("Weekly Availability")
+            MessageLookupByLibrary.simpleMessage("Weekly Availability"),
+        "weight": MessageLookupByLibrary.simpleMessage("Weight")
       };
 }

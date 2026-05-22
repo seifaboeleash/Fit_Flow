@@ -24,52 +24,69 @@ class FirestoreWorkoutRepository implements WorkoutRepository {
       final planData = planDoc.data()!;
       planData['id'] = planDoc.id;
 
-      // 2. Fetch .collection('workout_days')
-      final daysSnapshot = await planDoc.reference
-          .collection('workout_days')
-          .orderBy('day_number')
-          .get()
-          .catchError((_) => planDoc.reference.collection('workout_days').get());
+      // Parse the plan to extract the embedded workouts
+      final plan = WorkoutPlan.fromJson(planData);
 
-      List<WorkoutDay> workoutDays = [];
+      List<WorkoutDay> populatedDays = [];
 
-      for (var dayDoc in daysSnapshot.docs) {
-        final dayData = dayDoc.data();
+      for (var day in plan.days) {
+        List<DayExercise> populatedExercises = [];
 
-        // 3. For each day: .collection('day_exercises')
-        final exercisesSnapshot = await dayDoc.reference
-            .collection('day_exercises')
-            .orderBy('order')
-            .get()
-            .catchError((_) => dayDoc.reference.collection('day_exercises').get());
-
-        List<DayExercise> dayExercises = [];
-
-        for (var exerciseDoc in exercisesSnapshot.docs) {
-          final exData = exerciseDoc.data();
-          final exerciseId = exData['exercise_id'] ?? exData['exerciseId'] as String;
-
-          // 4. For each exercise: exercises/{exerciseId} -> exercise details
+        for (var ex in day.exercises) {
+          final exerciseId = ex.exerciseId;
           final exerciseDetailsDoc =
-           await _firestore.collection('exercises').doc(exerciseId).get();
+              await _firestore.collection('exercises').doc(exerciseId).get();
+          
           Exercise? exerciseDetails;
-
           if (exerciseDetailsDoc.exists) {
             final detailsData = exerciseDetailsDoc.data()!;
             detailsData['id'] = exerciseDetailsDoc.id;
             exerciseDetails = Exercise.fromJson(detailsData);
           }
 
-          dayExercises.add(DayExercise.fromJson(exData, exerciseDetails: exerciseDetails));
+          populatedExercises.add(ex.copyWith(exerciseDetails: exerciseDetails));
         }
 
-        workoutDays.add(WorkoutDay.fromJson(dayData, exercises: dayExercises));
+        populatedDays.add(WorkoutDay(
+          dayNumber: day.dayNumber,
+          focusEn: day.focusEn,
+          focusAr: day.focusAr,
+          exercises: populatedExercises,
+        ));
       }
 
-      // 5. Assemble and return WorkoutPlan
-      return WorkoutPlan.fromJson(planData, days: workoutDays);
+      return WorkoutPlan(
+        id: plan.id,
+        goalId: plan.goalId,
+        daysPerWeek: plan.daysPerWeek,
+        planNameEn: plan.planNameEn,
+        planNameAr: plan.planNameAr,
+        descriptionEn: plan.descriptionEn,
+        descriptionAr: plan.descriptionAr,
+        days: populatedDays,
+      );
     } catch (e) {
       throw Exception('Failed to fetch workout plan: $e');
+    }
+  }
+
+  @override
+  Future<WorkoutPlan> getPlanByGoalAndDays(String goalId, int daysPerWeek) async {
+    try {
+      final querySnapshot = await _firestore
+          .collection('workout_plans')
+          .where('goal_id', isEqualTo: goalId)
+          .where('days_per_week', isEqualTo: daysPerWeek)
+          .limit(1)
+          .get();
+
+      if (querySnapshot.docs.isEmpty) {
+        throw Exception('Workout plan not found for goal: "$goalId" and days: "$daysPerWeek"');
+      }
+
+      return await getPlanById(querySnapshot.docs.first.id);
+    } catch (e) {
+      throw Exception('Failed to fetch workout plan by goal and days: $e');
     }
   }
 }

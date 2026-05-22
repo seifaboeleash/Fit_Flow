@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "exerciseRest": MessageLookupByLibrary.simpleMessage("راحة"),
         "exerciseSets": MessageLookupByLibrary.simpleMessage("مجموعات"),
         "exercisesCount": m1,
+        "finish": MessageLookupByLibrary.simpleMessage("إنهاء"),
         "fivePlusDays": MessageLookupByLibrary.simpleMessage("5+ أيام"),
         "goalBuildMuscle": MessageLookupByLibrary.simpleMessage("بناء العضلات"),
         "goalBuildMuscleDesc": MessageLookupByLibrary.simpleMessage(
@@ -70,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الحرق الأسبوعي"),
         "homeWeeklyBurnDesc": MessageLookupByLibrary.simpleMessage(
             "السعرات الحرارية المحروقة هذا الأسبوع."),
+        "kg": MessageLookupByLibrary.simpleMessage("كجم"),
         "minutesCount": m2,
         "navHome": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "navLearn": MessageLookupByLibrary.simpleMessage("التعلم"),
@@ -80,10 +82,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingSubtitle":
             MessageLookupByLibrary.simpleMessage("يرجى تحديد هدفك وتوفرك"),
         "onboardingTitle": MessageLookupByLibrary.simpleMessage("اختر هدفك"),
+        "reps": MessageLookupByLibrary.simpleMessage("تكرار"),
+        "set": MessageLookupByLibrary.simpleMessage("مجموعة"),
+        "startTimer": MessageLookupByLibrary.simpleMessage("بدء المؤقت"),
         "startWorkout": MessageLookupByLibrary.simpleMessage("ابدأ التمرين"),
         "unknownExercise":
             MessageLookupByLibrary.simpleMessage("تمرين غير معروف"),
         "weeklyAvailability":
-            MessageLookupByLibrary.simpleMessage("التوفر الأسبوعي")
+            MessageLookupByLibrary.simpleMessage("التوفر الأسبوعي"),
+        "weight": MessageLookupByLibrary.simpleMessage("الوزن")
       };
 }

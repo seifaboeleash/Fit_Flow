@@ -54,5 +54,11 @@
       "count": { "type": "int" }
     }
   },
-  "fivePlusDays": "5+ Days"
+  "fivePlusDays": "5+ Days",
+  "set": "SET",
+  "kg": "kg",
+  "reps": "REPS",
+  "weight": "WEIGHT",
+  "finish": "Finish",
+  "startTimer": "Start Timer"
 }

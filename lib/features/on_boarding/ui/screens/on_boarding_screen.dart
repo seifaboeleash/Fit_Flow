@@ -1,17 +1,15 @@
 import 'package:fit_flow/core/constants/strings.dart';
-import 'package:fit_flow/core/extensions/plan_localization_extension.dart';
 import 'package:fit_flow/features/workout/domain/entities/workout_plan.dart';
 import 'package:fit_flow/core/shared/custom_snack_bar.dart';
 import 'package:fit_flow/core/theme/app_colors.dart';
-import 'package:fit_flow/core/theme/styles.dart';
-import 'package:fit_flow/core/shared/custom_button.dart';
 import 'package:fit_flow/core/utils/di.dart';
 import 'package:fit_flow/core/localization/locale_cubit.dart';
 import 'package:fit_flow/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';
-import 'package:fit_flow/features/on_boarding/ui/widgets/availability_selector.dart';
-import 'package:fit_flow/features/on_boarding/ui/widgets/goal_selection_card.dart';
 import 'package:fit_flow/features/on_boarding/ui/widgets/on_boarding_header.dart';
-import 'package:fit_flow/generated/l10n.dart';
+import 'package:fit_flow/features/on_boarding/ui/widgets/on_boarding_title_section.dart';
+import 'package:fit_flow/features/on_boarding/ui/widgets/on_boarding_goals_list.dart';
+import 'package:fit_flow/features/on_boarding/ui/widgets/on_boarding_availability_section.dart';
+import 'package:fit_flow/features/on_boarding/ui/widgets/on_boarding_bottom_actions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,18 +17,6 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
-
-  String _getSvgPathForGoal(String id) {
-    switch (id) {
-      case 'build_muscle':
-        return 'assets/svgs/build_muscle.svg';
-      case 'get_strong':
-        return 'assets/svgs/get_strong.svg';
-      case 'general_fitness':
-      default:
-        return 'assets/svgs/general_fitness.svg';
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,20 +46,43 @@ class OnBoardingScreen extends StatelessWidget {
                           }
                         },
                         builder: (context, state) {
-                          final lang = context.read<LocaleCubit>().state.languageCode;
-                          
-                          final bool isLoading = state is OnBoardingLoadingGoals || state is OnBoardingLoading;
-                          
-                          final List<Goal> displayGoals = isLoading 
+                          final lang =
+                              context.read<LocaleCubit>().state.languageCode;
+
+                          final bool isLoading =
+                              state is OnBoardingLoadingGoals ||
+                                  state is OnBoardingLoading;
+
+                          final List<Goal> displayGoals = isLoading
                               ? [
-                                  Goal(id: 'dummy1', titleEn: 'Loading goal title', titleAr: 'تحميل', subtitleEn: 'Loading subtitle...', subtitleAr: 'تحميل'),
-                                  Goal(id: 'dummy2', titleEn: 'Loading goal title', titleAr: 'تحميل', subtitleEn: 'Loading subtitle...', subtitleAr: 'تحميل'),
-                                  Goal(id: 'dummy3', titleEn: 'Loading goal title', titleAr: 'تحميل', subtitleEn: 'Loading subtitle...', subtitleAr: 'تحميل'),
+                                  Goal(
+                                      id: 'dummy1',
+                                      titleEn: 'Loading goal title',
+                                      titleAr: 'تحميل',
+                                      subtitleEn: 'Loading subtitle...',
+                                      subtitleAr: 'تحميل'),
+                                  Goal(
+                                      id: 'dummy2',
+                                      titleEn: 'Loading goal title',
+                                      titleAr: 'تحميل',
+                                      subtitleEn: 'Loading subtitle...',
+                                      subtitleAr: 'تحميل'),
+                                  Goal(
+                                      id: 'dummy3',
+                                      titleEn: 'Loading goal title',
+                                      titleAr: 'تحميل',
+                                      subtitleEn: 'Loading subtitle...',
+                                      subtitleAr: 'تحميل'),
                                 ]
                               : (state is OnBoardingUpdated ? state.goals : []);
 
-                          final int displayDays = state is OnBoardingUpdated ? state.selectedDays : 3;
-                          final String? displaySelectedGoalId = state is OnBoardingUpdated ? state.selectedGoal?.id : null;
+                          final int displayDays = state is OnBoardingUpdated
+                              ? state.selectedDays
+                              : 3;
+                          final String? displaySelectedGoalId =
+                              state is OnBoardingUpdated
+                                  ? state.selectedGoal?.id
+                                  : null;
 
                           if (!isLoading && state is! OnBoardingUpdated) {
                             return const SizedBox.shrink();
@@ -84,66 +93,19 @@ class OnBoardingScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  S.of(context).onboardingTitle,
-                                  style: TextStyle(
-                                    fontSize: 34.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: AppColors.textDark,
-                                  ),
-                                ),
-                                SizedBox(height: 8.h),
-                                Text(
-                                  S.of(context).onboardingDesc,
-                                  style: Styles.textStyle14,
-                                ),
+                                const OnBoardingTitleSection(),
                                 SizedBox(height: 20.h),
-                                ...displayGoals.map(
-                                  (goal) => GoalSelectionCard(
-                                    title: goal.title(lang),
-                                    subtitle: goal.subtitle(lang),
-                                    svgPath: _getSvgPathForGoal(goal.id),
-                                    isSelected: displaySelectedGoalId == goal.id,
-                                    onTap: () {
-                                      if (!isLoading) {
-                                        context.read<OnBoardingCubit>().selectGoal(goal);
-                                      }
-                                    },
-                                  ),
+                                OnBoardingGoalsList(
+                                  displayGoals: displayGoals,
+                                  displaySelectedGoalId: displaySelectedGoalId,
+                                  isLoading: isLoading,
+                                  lang: lang,
                                 ),
-                                SizedBox(height: 16.h),
-                                Text(
-                                  S.of(context).weeklyAvailability,
-                                  style: Styles.textStyle18,
+                                SizedBox(height: 6.h),
+                                OnBoardingAvailabilitySection(
+                                  displayDays: displayDays,
+                                  isLoading: isLoading,
                                 ),
-                                SizedBox(height: 16.h),
-                                AvailabilitySelector(
-                                  selectedDays: displayDays,
-                                  onDaysSelected: (days) {
-                                    if (!isLoading) {
-                                      context.read<OnBoardingCubit>().selectDays(days);
-                                    }
-                                  },
-                                ),
-                                SizedBox(height: 16.h),
-                                displayDays == 3
-                                    ? Container(
-                                        height: 150.h,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                              'assets/images/Background+Border.png',
-                                            ),
-                                            fit: BoxFit.cover,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(16.r),
-                                        ),
-                                        alignment: AlignmentDirectional.bottomStart,
-                                        padding: EdgeInsets.all(16.w),
-                                      )
-                                    : SizedBox.shrink(),
-                                SizedBox(height: 16.h),
                               ],
                             ),
                           );
@@ -151,44 +113,7 @@ class OnBoardingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Column(
-                    children: [
-                      SizedBox(height: 16.h),
-                      CustomButton(
-                        text: S.of(context).continueButton,
-                        color: AppColors.primaryColor,
-                        textColor: AppColors.white,
-                        sufix: Icon(
-                          Icons.arrow_forward,
-                          color: AppColors.white,
-                        ),
-                        onTap: () {
-                          if (context.read<OnBoardingCubit>().canContinue()) {
-                            context
-                                .read<OnBoardingCubit>()
-                                .completeOnboarding();
-                          } else {
-                            showCustomSnackBar(
-                              context,
-                              S.of(context).onboardingSubtitle,
-                            );
-                          }
-                        },
-                        radius: 1000.r,
-                      ),
-                      SizedBox(height: 16.h),
-                      Center(
-                        child: Text(
-                          S.of(context).changeLaterProfile,
-                          style: Styles.textStyle10.copyWith(
-                            color: AppColors.grey,
-                            letterSpacing: 1.1
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 16.h),
-                    ],
-                  ),
+                  const OnBoardingBottomActions(),
                 ],
               ),
             ),

@@ -1,6 +1,6 @@
 import 'package:fit_flow/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import '../../../../features/home/presentation/screens/home_screen.dart';
+import 'features/home/presentation/screens/home_screen.dart';
 import 'package:fit_flow/generated/l10n.dart';
 
 class MainLayout extends StatefulWidget {

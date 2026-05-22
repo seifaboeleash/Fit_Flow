@@ -19,19 +19,25 @@ class WeeklyDateStrip extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: weekDays.map((day) => _buildDayItem(day)).toList(),
+        children: weekDays.asMap().entries.map((entry) {
+          final index = entry.key;
+          final day = entry.value;
+          // Static days of activity (non-consecutive)
+          final isStaticallyActive = index == 0 || index == 2 || index == 4;
+          return _buildDayItem(day, isStaticallyActive);
+        }).toList(),
       ),
     );
   }
 
-  Widget _buildDayItem(WeekDay day) {
+  Widget _buildDayItem(WeekDay day, bool isActive) {
     return Column(
       children: [
         Text(
           day.name,
           style: Styles.textStyle12.copyWith(
-            color: day.isActive ? AppColors.textDark : AppColors.grey,
-            fontWeight: day.isActive ? FontWeight.w700 : FontWeight.w500,
+            color: AppColors.grey,
+            fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
           ),
         ),
         SizedBox(height: 8.h),
@@ -39,18 +45,16 @@ class WeeklyDateStrip extends StatelessWidget {
           width: 36.w,
           height: 36.w,
           decoration: BoxDecoration(
-            color: day.isActive ? AppColors.primaryColor : AppColors.white,
+            color: isActive ? AppColors.primaryColor : Color(0xFFEEEEEE),
             shape: BoxShape.circle,
-            border: day.isActive
-                ? null
-                : Border.all(color: AppColors.outlineGrey),
+            border: isActive ? null : Border.all(color: AppColors.outlineGrey),
           ),
           alignment: Alignment.center,
           child: Text(
             day.date.toString(),
             style: Styles.textStyle14.copyWith(
-              color: day.isActive ? AppColors.white : AppColors.grey,
-              fontWeight: day.isActive ? FontWeight.w700 : FontWeight.w500,
+              color: isActive ? AppColors.white : AppColors.grey,
+              fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
             ),
           ),
         ),
