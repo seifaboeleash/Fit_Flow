@@ -52,8 +52,8 @@ class OnBoardingScreen extends StatelessWidget {
                           final bool isLoading =
                               state is OnBoardingLoadingGoals ||
                                   state is OnBoardingLoading;
-
-                          final List<Goal> displayGoals = isLoading
+                                  // sperate is loading 
+                                final List<Goal> displayGoals = isLoading
                               ? [
                                   Goal(
                                       id: 'dummy1',

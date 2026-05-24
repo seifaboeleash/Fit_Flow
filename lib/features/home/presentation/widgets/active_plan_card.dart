@@ -17,11 +17,12 @@ class ActivePlanCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-        // image: DecorationImage(
-        //   image: AssetImage('assets/images/active_plan_card.png'),
-        //   colorFilter: ColorFilter.mode(Colors.transparent, BlendMode.darken),
-        //   fit: BoxFit.cover,
-        // ),
+        image: DecorationImage(
+          image: AssetImage('assets/images/active_plan_card.png'),
+          opacity: .2,
+          colorFilter: ColorFilter.mode(Colors.transparent, BlendMode.darken),
+          fit: BoxFit.cover,
+        ),
         color: AppColors.outlineGrey.withOpacity(0.9),
         borderRadius: BorderRadius.circular(20.r),
       ),
@@ -47,7 +48,8 @@ class ActivePlanCard extends StatelessWidget {
             ],
           ),
           SizedBox(height: 12.h),
-          Text(plan.plan.name(Localizations.localeOf(context).languageCode), style: Styles.textStyle24),
+          Text(plan.plan.name(Localizations.localeOf(context).languageCode),
+              style: Styles.textStyle24),
           SizedBox(height: 8.h),
           Row(
             children: [
@@ -76,6 +78,7 @@ class ActivePlanCard extends StatelessWidget {
             sufix: Icon(Icons.play_arrow, color: AppColors.white),
             color: AppColors.primaryColor,
             textColor: AppColors.white,
+            radius: 1000.r,
             onTap: () {},
           ),
         ],

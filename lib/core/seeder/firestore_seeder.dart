@@ -24,22 +24,6 @@ class FirestoreSeeder {
     print('✅ Seeding complete! Check your Firestore console.');
   }
 
-  // ─── 1. Seed goals collection ────────────────────────────────────────────────
-  // Each goal becomes: goals/get_strong, goals/build_muscle, goals/general_fitness
-  // Future<void> _seedGoals(List<dynamic> goals) async {
-  //   print('\n📦 Seeding goals (${goals.length} documents)...');
-
-  //   for (final goal in goals) {
-  //     final String id = goal['id']; // e.g. "get_strong"
-
-  //     await _firestore
-  //         .collection('goals')
-  //         .doc(id)
-  //         .set(Map<String, dynamic>.from(goal));
-
-  //     print('  ✓ goals/$id');
-  //   }
-  // }
   Future<void> _seedGoals(List<dynamic> goals) async {
   print('\n📦 Seeding goals (${goals.length} documents)...');
 

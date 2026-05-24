@@ -23,7 +23,7 @@
   "homeWeeklyBurn": "Weekly Burn",
   "homeWeeklyBurnDesc": "Active kcal burned this week.",
   "homeWeek1": "Week 1",
-  "exerciseInstructions": "Instructions",
+  "exerciseFormCues": "FORM CUES",
   "onboardingTitle": "Select Your Goal",
   "onboardingDesc": "Customize your journey for precision performance.",
   "weeklyAvailability": "Weekly Availability",
@@ -39,19 +39,25 @@
   "minutesCount": "{count, plural, =1{1 Minute} other{{count} Minutes}}",
   "@minutesCount": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "exercisesCount": "{count, plural, =1{1 Exercise} other{{count} Exercises}}",
   "@exercisesCount": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "daysCount": "{count, plural, =1{1 Day} other{{count} Days}}",
   "@daysCount": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "fivePlusDays": "5+ Days",

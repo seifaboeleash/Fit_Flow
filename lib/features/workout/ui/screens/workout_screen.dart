@@ -5,17 +5,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
-import '../../../workout/domain/entities/workout_plan.dart';
+import '../../domain/entities/workout_plan.dart';
 import 'package:fit_flow/generated/l10n.dart';
-import '../../../workout/presentation/cubit/exercise_cubit.dart';
-import '../../../workout/presentation/widgets/rest_timer_widget.dart';
-import '../../../workout/presentation/widgets/sets_table.dart';
+import '../../presentation/cubit/exercise_cubit.dart';
+import '../widgets/rest_timer_widget.dart';
+import '../widgets/sets_table.dart';
 
-class ExerciseDetailsScreen extends StatelessWidget {
+class WorkoutScreen extends StatelessWidget {
   final Exercise exercise;
   final DayExercise dayExercise;
 
-  const ExerciseDetailsScreen({
+  const WorkoutScreen({
     super.key,
     required this.exercise,
     required this.dayExercise,
@@ -106,8 +106,7 @@ class _ExerciseDetailsView extends StatelessWidget {
                       SizedBox(height: 12.h),
 
                       Container(
-                        height: 246.h,
-                        width: 350.w,
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16.r),
                           color: AppColors.white,
@@ -132,9 +131,11 @@ class _ExerciseDetailsView extends StatelessWidget {
                                 ),
                                 SizedBox(width: 8.w),
                                 Text(
-                                  S.of(context).exerciseInstructions,
-                                  style: Styles.textStyle18
-                                      .copyWith(fontWeight: FontWeight.bold),
+                                  S.of(context).exerciseFormCues,
+                                  style: Styles.textStyle16.copyWith(
+                                      fontWeight: FontWeight.w700,
+                                      letterSpacing: 1.2,
+                                      color: AppColors.textDark),
                                 ),
                               ],
                             ),

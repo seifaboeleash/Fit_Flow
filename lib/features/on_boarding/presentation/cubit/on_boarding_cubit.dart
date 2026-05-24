@@ -17,7 +17,7 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
       emit(OnBoardingError('Failed to load goals: $e'));
     }
   }
-
+    // sperate cubits
   void selectGoal(Goal goal) {
     if (state is OnBoardingUpdated) {
       final currentState = state as OnBoardingUpdated;

@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../workout/domain/entities/workout_plan.dart';
-import '../screens/exercise_details_screen.dart';
+import '../../../workout/ui/screens/workout_screen.dart';
 import 'package:fit_flow/generated/l10n.dart';
 
 class ExerciseListTile extends StatelessWidget {
@@ -25,7 +25,7 @@ class ExerciseListTile extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => ExerciseDetailsScreen(
+              builder: (_) => WorkoutScreen(
                 exercise: details,
                 dayExercise: exercise,
               ),

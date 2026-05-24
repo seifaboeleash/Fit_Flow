@@ -16,12 +16,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () async {
-      // final isOnboardingDone =
-      //     Hive.box('prefs_box').get('isOnboardingDone', defaultValue: false);
+      final isOnboardingDone =
+          Hive.box('prefs_box').get('isOnboardingDone', defaultValue: false);
 
-// Then navigate accordingly
-      // Navigator.pushReplacementNamed(context, isOnboardingDone ? homeScreen : onBoardingScreen);
-      Navigator.pushReplacementNamed(context, onBoardingScreen);
+      Navigator.pushReplacementNamed(
+          context,
+          isOnboardingDone
+              ? mainLayoutScreen
+              : onBoardingScreen);
     });
   }
 

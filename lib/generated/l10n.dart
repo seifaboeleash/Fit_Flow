@@ -251,10 +251,10 @@ class S {
   }
 
   /// `Instructions`
-  String get exerciseInstructions {
+  String get exerciseFormCues {
     return Intl.message(
-      'Instructions',
-      name: 'exerciseInstructions',
+      'FORM CUES',
+      name: 'exerciseFormCues',
       desc: '',
       args: [],
     );

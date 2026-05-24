@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../generated/l10n.dart';
-import '../cubit/exercise_cubit.dart';
+import '../../presentation/cubit/exercise_cubit.dart';
 
 class SetsTable extends StatelessWidget {
   const SetsTable({super.key});
